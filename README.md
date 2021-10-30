@@ -106,3 +106,5 @@ TISC{applecarrotpea}
 TISC{answer to this challenge is here applecarrotpea}
 TISC{here applecarrotpea}
 ```
+
+flag{keep_this_alive}
