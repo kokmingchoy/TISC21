@@ -35,3 +35,6 @@ Running `strings file3.jpg` does not reveal any useful text.
 ---
 
 Inspecting the contents of `file3.jpg` with a hex editor (GHex) we note that after the bytes 'FF D9' (which terminate a normal JPEG file) we see additional data beginning with the bytes 'PK' (which suggests there might be a Zip file there).
+
+Extracting the bytes from `file3.jpg` from the offset 0x1C10 to obtain `file3_1`.
+
