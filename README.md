@@ -24,10 +24,14 @@ Extracting the right channel data into its own audio file with **ffmpeg**:
 Playing `output.wav` in **Audacity** I hear what sounds like Morse code!
 A closer inspection of the visual waveform also confirms that the waveform seems to look like a series of "dots" and "dashes".
 Transcribing the "dots" and "dashes" we get:
-`-.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-`
+```
+-.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-
+```
 
 Throwing the Morse code into an online Morse Code Translator (https://morsedecoder.com/) returns the following text:
-`CSITISLOCATEDINSCIENCEPARK`
+```
+CSITISLOCATEDINSCIENCEPARK
+```
 
 The instructions require that this answer be in lowercase.
 
