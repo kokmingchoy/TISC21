@@ -19,7 +19,9 @@ Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
 The second audio channel does look like it contains data (at a very low amplitude audio-wise). Perhaps the secret message is encoded in the second channel?
 
 Extracting the right channel data into its own audio file with **ffmpeg**:
-`ffmpeg -i file1.wav -filter:a 'pan=mono|FC=FR' output.wav`
+```bash
+ffmpeg -i file1.wav -filter:a 'pan=mono|FC=FR' output.wav
+```
 
 Playing `output.wav` in **Audacity** I hear what sounds like Morse code!
 A closer inspection of the visual waveform also confirms that the waveform seems to look like a series of "dots" and "dashes".
@@ -35,7 +37,7 @@ CSITISLOCATEDINSCIENCEPARK
 
 The instructions require that this answer be in lowercase.
 
-Level 1.1 flag: TISC{csitislocatedinsciencepark}
+Level 1.1 flag: `TISC{csitislocatedinsciencepark}`
 
 
 ## Level 1.2
