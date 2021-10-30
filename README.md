@@ -18,6 +18,21 @@ Playing `file1.wav` I detected that the sound appears to be coming only from the
 Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
 The second audio channel does look like it contains data (at a very low amplitude audio-wise). Perhaps the secret message is encoded in the second channel?
 
+Extracting the right channel data into its own audio file with **ffmpeg**:
+`ffmpeg -i file1.wav -filter:a 'pan=mono|FC=FR' output.wav`
+
+Playing `output.wav` in **Audacity** I hear what sounds like Morse code!
+A closer inspection of the visual waveform also confirms that the waveform seems to look like a series of "dots" and "dashes".
+Transcribing the "dots" and "dashes" we get:
+`-.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-`
+
+Throwing the Morse code into an online Morse Code Translator (https://morsedecoder.com/) returns the following text:
+`CSITISLOCATEDINSCIENCEPARK`
+
+The instructions require that this answer be in lowercase.
+
+Level 1.1 flag: TISC{csitislocatedinsciencepark}
+
 
 ## Level 1.2
 
@@ -29,6 +44,7 @@ file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, dire
 ```
 
 Level 1.2 flag : `TISC{2003:08:25 14:55:27}`
+
 
 ## Level 1.3
 
