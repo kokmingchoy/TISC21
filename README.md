@@ -8,6 +8,17 @@ Level0 flag (after answering survey) : `TISC{Br1ng_0n_th3_ch4ll3ng3s!!}`
 
 A file [file1.wav](https://api.tisc.csit-events.sg/file?id=ckr6sv183004v0838z5e2ioiy&name=file1.wav) was provided for analysis, which supposedly contains a secret message.
 
+Running `file file1.wav` shows it is recognised as a valid audio file:
+```
+file1.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 11025 Hz
+```
+
+Playing `file1.wav` I detected that the sound appears to be coming only from the left channel, even though the audio file had been encoded in stereo.
+
+Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
+The second audio channel does look like it contains data (at a very low amplitude audio-wise). Perhaps the secret message is encoded in the second channel?
+
+
 ## Level 1.2
 
 A file [file2.jpg](https://api.tisc.csit-events.sg/file?id=ckr6swk6d006m0906vot9ga8l&name=file2.jpg) was provided for analysis. Question: What was the modifed time of the image?
