@@ -28,3 +28,10 @@ Running `file file3.jpg` gives us:
 file3.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, progressive, precision 8, 360x360, components 3
 ```
 
+---
+
+Running `strings file3.jpg` does not reveal any useful text.
+
+---
+
+Inspecting the contents of `file3.jpg` with a hex editor (GHex) we note that after the bytes 'FF D9' (which terminate a normal JPEG file) we see additional data beginning with the bytes 'PK' (which suggests there might be a Zip file there).
