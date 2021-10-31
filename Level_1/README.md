@@ -143,7 +143,7 @@ There appears to be something in the Recycle Bin. Opening up the Recycle Bin rev
 
 First we restore the file from the Recycle Bin (clicking on the "Restore" option on the context menu).
 The file gets restored to the Desktop.
-The Windows 10 virtual machine does not have 7zip or some other software that can work to decompress the contents of this 7z file, so I shall move this restored 7z out of the virtual machine and onto my host machine where I have more tools at my disposal.
+The Windows 10 virtual machine does not have 7zip or some other software that can work to decompress the contents of this 7z file, so I shall move this restored 7z archive off of the virtual machine and onto my host machine where I have more tools at my disposal.
 
 On my host machine (a Linux box) I run `file sentosa-sea-aquarium.7z` to confirm the contents of the file:
 ```
