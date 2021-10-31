@@ -102,3 +102,19 @@ ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 <br>
 
 
+## Level 1 Challenge 4
+
+This and subsequent challenges in Level 1 are related to the Windows 10 virtual machine provided.
+Question: What is the name of the user?
+
+Running `whoami` from the command prompt shows:
+```
+desktop-8u7f1gr\adam
+```
+
+:triangular_flag_on_post: **Level 1 Challenge 4 flag: `TISC{adam}`**
+
+<br>
+
+## Level 1 Challenge 5
+
