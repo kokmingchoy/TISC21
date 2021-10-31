@@ -234,11 +234,9 @@ SHA1 hash of c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singap
 0d97dbdba2d35c37f434538e4dfaa06fccc18a13
 ```
 
-:triangular_flag_on_post: **Level 1 Challenge 10 flag: `TISC{otter-singapore.lnk}`**
-
-
-
-
-
-
-
+The following submissions were **REJECTED**:
+```
+TISC{otter-singapore.lnk}
+TISC{c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singapore.lnk}
+TISC{otter-singapore,lnk}
+```
