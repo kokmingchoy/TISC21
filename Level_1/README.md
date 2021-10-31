@@ -171,6 +171,11 @@ On the last line of the output on the screen, the CRC32 hash is given:
 CRC32  for data:              040E23DA
 ```
 
+:triangular_flag_on_post: **Level 1 Challenge 6 flag: `TISC{040E23DA}`**
+
+<br>
+
+## Level 1 Challenge 7
 
 
 
