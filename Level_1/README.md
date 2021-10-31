@@ -1,9 +1,4 @@
-# TISC21
-
-Area for storing code and notes related to The InfoSecurity Challenge (TISC) 2021, organised by the Center for Strategic Infocomm Technologies (CSIT).
-
-Level0 flag (after answering survey) : `TISC{Br1ng_0n_th3_ch4ll3ng3s!!}`
-
+# The InfoSecurity Challenge (TISC)
 ## Level 1.1
 
 A file [file1.wav](https://api.tisc.csit-events.sg/file?id=ckr6sv183004v0838z5e2ioiy&name=file1.wav) was provided for analysis, which supposedly contains a secret message.
