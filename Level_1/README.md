@@ -232,16 +232,16 @@ Question: A device with the drive letter “Z” was connected as a shared folde
 The relevant Registry key may be viewed using **regedit**.
 The key I looked at was:
 ```
-Computer\HKEY_LOCAL_MACHINE\SYSTEM\MountedDevices
+Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
 ```
-which had key names related to drives C and D and also the following:
+where I saw an entry for something that could have been the VirtualBox share (i.e. `\\VBoxSvr\vm-share`):
 ```
-\??\Volume{3d157072-ce9b-11eb-9164-806e6f6e6963}
+##VBoxSvr#vm-share
 ```
 
-Inspecting the value of this key shows some text "VBOX" that suggests this volume may be related to VirtualBox:
+The "label" of the share would have been "vm-share".
 
-:triangular_flag_on_post: **Level 1 Challenge 9 flag: `TISC{}`**
+:triangular_flag_on_post: **Level 1 Challenge 9 flag: `TISC{vm-share}`**
 
 <br>
 
