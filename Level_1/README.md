@@ -225,6 +225,27 @@ I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits 
 <br>
 
 
+## Level 1 Challenge 9
+
+Question: A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
+
+The relevant Registry key may be viewed using **regedit**.
+The key I looked at was:
+```
+Computer\HKEY_LOCAL_MACHINE\SYSTEM\MountedDevices
+```
+which had key names related to drives C and D and also the following:
+```
+\??\Volume{3d157072-ce9b-11eb-9164-806e6f6e6963}
+```
+
+Inspecting the value of this key shows some text "VBOX" that suggests this volume may be related to VirtualBox:
+
+:triangular_flag_on_post: **Level 1 Challenge 9 flag: `TISC{}`**
+
+<br>
+
+
 ## Level 1 Challenge 10
 
 This challenge requires us to look for a file on the Windows 10 virtual machine, which has the SHA1 filehash of **0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13**.
