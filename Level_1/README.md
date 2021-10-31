@@ -104,7 +104,7 @@ ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 
 ## Level 1 Challenge 4
 
-This and subsequent challenges in Level 1 are related to the Windows 10 virtual machine provided.
+This and subsequent challenges in Level 1 are related to the Windows 10 virtual machine provided.<br>
 Question: What is the name of the user?
 
 Running `whoami` from the command prompt shows:
@@ -121,8 +121,8 @@ desktop-8u7f1gr\adam
 
 Question: What time was the user's most recent logon?
 
-Starting up the Event Viewer (**eventvwr.msc**) to inspect the **Security** logs for previous logon events.
-We are looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.
+Starting up the Event Viewer (**eventvwr.msc**) to inspect the **Security** logs for previous logon events.<br>
+We are looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.<br>
 We find such an event (Event ID 4624) at the following timestamp:
 ```
  Logged: 17/6/2021 10:41:37 am
