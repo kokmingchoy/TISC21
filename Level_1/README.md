@@ -37,8 +37,6 @@ The instructions require that this answer be in lowercase.
 <br>
 
 
-
-
 ## Level 1 - Challenge 2
 
 A file [file2.jpg](https://api.tisc.csit-events.sg/file?id=ckr6swk6d006m0906vot9ga8l&name=file2.jpg) was provided for analysis. Question: What was the modifed time of the image?
@@ -49,6 +47,8 @@ file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, dire
 ```
 
 :triangular_flag_on_post: **Level 1 Challenge 2 flag : `TISC{2003:08:25 14:55:27}`**
+
+<br>
 
 
 ## Level 1 - Challenge 3
@@ -98,3 +98,7 @@ ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 ```
 
 :triangular_flag_on_post: **Level 1 Challenge 3 flag: `TISC{APPLECARROTPEAR}`**
+
+<br>
+
+
