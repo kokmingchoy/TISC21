@@ -87,25 +87,13 @@ picture_with_text.jpg: data
 Inspecting `picture_with_text.jpg` in GHex we see that there are some additional bytes before the proper start of the JPEG file.
 These bytes are:
 ```
-NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRN
+NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRNE
 ```
 
 The text looks like it could have been encoded with some simple replacement ciper.
-Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)&input=TkFGSlJFIEdCIEdVVkYgUFVOWVlSQVRSIFZGIFVSRVIgTkNDWVJQTkVFQkdDUk4) produces the clear text:
+Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)&input=TkFGSlJFIEdCIEdVVkYgUFVOWVlSQVRSIFZGIFVSRVIgTkNDWVJQTkVFQkdDUk5F) produces the clear text:
 ```
-ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEA
-```
-Unfortunately, the following flag formats which I submitted were all rejected:
-```
-TISC{APPLECARROTPEA}
-TISC{ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEA}
-TISC{HERE APPLECARROTPEA}
-TISC{TO THIS CHALLENGE IS HERE APPLECARROTPEA}
-TISC{AppleCarrotPea}
-TISC{applecarrotpea}
-TISC{answer to this challenge is here applecarrotpea}
-TISC{here applecarrotpea}
-TISC{ANSWERTOTHISCHALLENGEISHEREAPPLECARROTPEA}
+ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 ```
 
-
+Level 1.3 flag: `TISC{APPLECARROTPEAR}`
