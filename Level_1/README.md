@@ -1,5 +1,5 @@
-# The InfoSecurity Challenge (TISC)
-## Level 1.1
+# Scratching the Surface
+## Level 1 - Challenge 1
 
 A file [file1.wav](https://api.tisc.csit-events.sg/file?id=ckr6sv183004v0838z5e2ioiy&name=file1.wav) was provided for analysis, which supposedly contains a secret message.
 
@@ -32,10 +32,10 @@ CSITISLOCATEDINSCIENCEPARK
 
 The instructions require that this answer be in lowercase.
 
-**Level 1.1 flag: `TISC{csitislocatedinsciencepark}`**
+**Level 1 Challenge 1 flag: `TISC{csitislocatedinsciencepark}`**
 
 
-## Level 1.2
+## Level 1 - Challenge 2
 
 A file [file2.jpg](https://api.tisc.csit-events.sg/file?id=ckr6swk6d006m0906vot9ga8l&name=file2.jpg) was provided for analysis. Question: What was the modifed time of the image?
 
@@ -44,10 +44,10 @@ Using `file file2.jpg` outputs some file metadata, including a timestamp `2003:0
 file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=11, description=          , manufacturer=NIKON, model=E885, orientation=upper-left, xresolution=216, yresolution=224, resolutionunit=2, software=E885v1.1, datetime=2003:08:25 14:55:27], baseline, precision 8, 1024x768, components 3
 ```
 
-**Level 1.2 flag : `TISC{2003:08:25 14:55:27}`**
+**Level 1 Challenge 2 flag : `TISC{2003:08:25 14:55:27}`**
 
 
-## Level 1.3
+## Level 1 - Challenge 3
 
 A file [file3.jpg](https://api.tisc.csit-events.sg/file?id=ckr6sxww900860838aged2020&name=file3.jpg) was provided for analysis. Apparently some secret message is encoded in it.
 
@@ -91,4 +91,4 @@ Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=
 ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 ```
 
-**Level 1.3 flag: `TISC{APPLECARROTPEAR}`**
+**Level 1 Challenge 3 flag: `TISC{APPLECARROTPEAR}`**
