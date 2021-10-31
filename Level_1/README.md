@@ -216,7 +216,7 @@ C:\Users\adam\AppData\Local\Microsoft\Edge\User Data\Default\History
 
 As this is an SQLite database file, I transfered the *History* file over to my host machine and from there, uploaded the file to the online [SQLite Viewer]( https://inloop.github.io/sqlite-viewer/).
 
-The *urls* table in the database shows the visited URLs and also the *visit_count*.
+The *urls* table in the database shows the visited URLs and also the *visit_count* for each visited URL.
 
 I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits to either `https://www.facebook.com` or `https://www.live.com`.
 
