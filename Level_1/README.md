@@ -32,7 +32,7 @@ CSITISLOCATEDINSCIENCEPARK
 
 The instructions require that this answer be in lowercase.
 
-**Level 1 Challenge 1 flag: `TISC{csitislocatedinsciencepark}`**
+:triangular_flag_on_post: **Level 1 Challenge 1 flag: `TISC{csitislocatedinsciencepark}`**
 
 
 ## Level 1 - Challenge 2
@@ -44,7 +44,7 @@ Using `file file2.jpg` outputs some file metadata, including a timestamp `2003:0
 file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=11, description=          , manufacturer=NIKON, model=E885, orientation=upper-left, xresolution=216, yresolution=224, resolutionunit=2, software=E885v1.1, datetime=2003:08:25 14:55:27], baseline, precision 8, 1024x768, components 3
 ```
 
-**Level 1 Challenge 2 flag : `TISC{2003:08:25 14:55:27}`**
+:triangular_flag_on_post: **Level 1 Challenge 2 flag : `TISC{2003:08:25 14:55:27}`**
 
 
 ## Level 1 - Challenge 3
@@ -93,4 +93,4 @@ Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=
 ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 ```
 
-**Level 1 Challenge 3 flag: `TISC{APPLECARROTPEAR}`**
+:triangular_flag_on_post: **Level 1 Challenge 3 flag: `TISC{APPLECARROTPEAR}`**
