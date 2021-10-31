@@ -118,3 +118,20 @@ desktop-8u7f1gr\adam
 
 ## Level 1 Challenge 5
 
+Question: What time was the user's most recent logon?
+
+Starting up the Event Viewer (**eventvwr.msc**) to inspect the **Security** logs for previous logon events.
+We are looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.
+We find such an event (Event ID 4624) at the following timestamp:
+```
+ Logged: 17/6/2021 10:41:37 am
+```
+Assuming this is Singapore local time (UTC+8), converting to UTC we get
+```
+17/06/2021 02:41:37
+```
+
+:triangular_flag_on_post: **Level 1 Challenge 5 flag: `TISC{17/06/2021 02:41:37}`**
+
+<br>
+
