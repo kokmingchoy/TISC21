@@ -177,8 +177,8 @@ CRC32  for data:              040E23DA
 
 ## Level 1 Challenge 7
 
-Question1: How many users have an RID of 1000 or above on the machine?
-Question2: What is the account name for RID of 501?
+Question1: How many users have an RID of 1000 or above on the machine?<br>
+Question2: What is the account name for RID of 501?<br>
 Question3: What is the account name for RID of 503?
 
 From the command prompt, running `wmic useraccount get name,sid` gives us the necessary information:
