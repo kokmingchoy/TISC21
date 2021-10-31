@@ -231,12 +231,12 @@ This challenge requires us to look for a file on the Windows 10 virtual machine,
 
 First, I checked against the [VirusTotal database](https://www.virustotal.com/gui/search/0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13) in case this SHA1 hash is for a known Windows executable. There was no result returned by VirusTotal, so I assumed the SHA1 hash is for a custom file created for this challenge, and likely to be in one of the folders owned by the user "adam".
 
-Starting at the folder location `c:\users\adam\` I generate the SHA1 hashes for all the files found under that folder, using Window's **certutil** program and place them in a file called `results.txt`.
+Starting at the folder location `c:\users\adam\` I generated the SHA1 hashes for all the files found under that folder, using Window's **certutil** program and placed them in a file called `results.txt`.
 ```
 for /r %i in (*.*) do certutil -hashfile "%i" sha1 >> c:\users\adam\results.txt
 ```
 
-It took a couple of minutes to generate the `results.txt`. Now to perform a case-insensitive search of the hash in the file using the **findstr** command:
+It took a couple of minutes to generate the `results.txt`. I performed a case-insensitive search of the hash in the file using the **findstr** command:
 ```
 findstr /I "0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13" c:\users\adam\results.txt
 ```
