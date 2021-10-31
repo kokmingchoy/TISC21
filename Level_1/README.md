@@ -191,8 +191,8 @@ Guest               S-1-5-21-271853984-2378250948-965456637-501
 WDAGUtilityAccount  S-1-5-21-271853984-2378250948-965456637-504
 ```
 
-We have only 1 user (adam) with RID of above 1000 (1002)
-We have the user *Guest* with RID of 501.
+We have only 1 user (adam) with RID of above 1000 (1002).<br>
+We have the user *Guest* with RID of 501.<br>
 We have the user *DefaultAccount* with RID of 503.
 
 :triangular_flag_on_post: **Level 1 Challenge 7 flag: `TISC{1-Guest-DefaultAccount}`**
