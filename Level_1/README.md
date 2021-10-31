@@ -65,7 +65,9 @@ Running `strings file3.jpg` does not reveal any readable text other than the str
 Inspecting the contents of `file3.jpg` with a hex editor (GHex) we note that after the bytes 'FF D9' (which terminate a normal JPEG file) we see additional data beginning with the bytes 'PK' (which suggests there might be a Zip file there).
 
 Using `dd` to extract the bytes from `file3.jpg` from the offset 0x1C10 (decimal 7184) to obtain `file3_a`:
-`dd if=file3.jpg bs=1 skip=7184 of=file3_a`
+```
+dd if=file3.jpg bs=1 skip=7184 of=file3_a
+```
 
 Running `file file3_a` on it confirms it is a valid Zip file:
 ```
