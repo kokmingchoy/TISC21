@@ -116,6 +116,7 @@ desktop-8u7f1gr\adam
 
 <br>
 
+
 ## Level 1 Challenge 5
 
 Question: What time was the user's most recent logon?
@@ -134,6 +135,7 @@ Assuming this is Singapore local time (UTC+8), converting to UTC we get
 :triangular_flag_on_post: **Level 1 Challenge 5 flag: `TISC{17/06/2021 02:41:37}`**
 
 <br>
+
 
 ## Level 1 Challenge 6
 
@@ -175,6 +177,7 @@ CRC32  for data:              040E23DA
 
 <br>
 
+
 ## Level 1 Challenge 7
 
 Question1: How many users have an RID of 1000 or above on the machine?<br>
@@ -198,5 +201,13 @@ We have the user *DefaultAccount* with RID of 503.
 :triangular_flag_on_post: **Level 1 Challenge 7 flag: `TISC{1-Guest-DefaultAccount}`**
 
 <br>
+
+
+## Level 1 Challenge 8
+
+Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ?<br>
+Question2: How many times did the user visit https://www.facebook.com ?<br>
+Question3: How many times did the user visit https://www.live.com ?
+
 
 
