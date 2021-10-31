@@ -273,4 +273,5 @@ The following submissions were **REJECTED**:
 TISC{otter-singapore.lnk}
 TISC{c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singapore.lnk}
 TISC{otter-singapore,lnk}
+TISC{OTTER-SINGAPORE.LNK}
 ```
