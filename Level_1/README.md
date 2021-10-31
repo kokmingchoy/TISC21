@@ -177,5 +177,26 @@ CRC32  for data:              040E23DA
 
 ## Level 1 Challenge 7
 
+Question1: How many users have an RID of 1000 or above on the machine?
+Question2: What is the account name for RID of 501?
+Question3: What is the account name for RID of 503?
+
+From the command prompt, running `wmic useraccount get name,sid` gives us the necessary information:
+```
+Name                SID
+adam                S-1-5-21-271853984-2378250948-965456637-1002
+Administrator       S-1-5-21-271853984-2378250948-965456637-500
+DefaultAccount      S-1-5-21-271853984-2378250948-965456637-503
+Guest               S-1-5-21-271853984-2378250948-965456637-501
+WDAGUtilityAccount  S-1-5-21-271853984-2378250948-965456637-504
+```
+
+We have only 1 user (adam) with RID of above 1000 (1002)
+We have the user *Guest* with RID of 501.
+We have the user *DefaultAccount* with RID of 503.
+
+:triangular_flag_on_post: **Level 1 Challenge 7 flag: `TISC{1-Guest-DefaultAccount}`**
+
+<br>
 
 
