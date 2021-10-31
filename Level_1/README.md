@@ -135,3 +135,42 @@ Assuming this is Singapore local time (UTC+8), converting to UTC we get
 
 <br>
 
+## Level 1 Challenge 6
+
+Question: A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?
+
+There appears to be something in the Recycle Bin. Opening up the Recycle Bin reveals a deleted file `sentosa-sea-aquarium.7z`, which should be the file of interest.
+
+First we restore the file from the Recycle Bin (clicking on the "Restore" option on the context menu).
+The file gets restored to the Desktop.
+The Windows 10 virtual machine does not have 7zip or some other software that can work to decompress the contents of this 7z file, so I shall move this restored 7z out of the virtual machine and onto my host machine where I have more tools at my disposal.
+
+On my host machine (a Linux box) I run `file sentosa-sea-aquarium.7z` to confirm the contents of the file:
+```
+sentosa-sea-aquarium.7z: 7-zip archive data, version 0.4
+```
+
+List the files in the 7z file using `7z l sentosa-sea-aquarium.7z`:
+```
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2021-06-17 09:48:03 ....A        45620        45624  sentosa-sea-aquarium.jpg
+------------------- ----- ------------ ------------  ------------------------
+2021-06-17 09:48:03              45620        45624  1 files
+```
+
+There was only one file (sentosa-sea-aquarium.jpg) in the 7z archive.
+
+Extracting with the option to calculate the CRC32 hash: 
+```
+7z e -scrcCRC32 sentosa-sea-aquarium.7z
+```
+
+On the last line of the output on the screen, the CRC32 hash is given:
+```
+CRC32  for data:              040E23DA
+```
+
+
+
+
