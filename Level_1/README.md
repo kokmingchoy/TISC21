@@ -209,6 +209,19 @@ Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/
 Question2: How many times did the user visit https://www.facebook.com ?<br>
 Question3: How many times did the user visit https://www.live.com ?
 
+For this challenge we need to inspect the *History* file of Microsoft Edge, which I found at:
+```
+C:\Users\adam\AppData\Local\Microsoft\Edge\User Data\Default\History
+```
+
+As this is an SQLite database file, I transfered the *History* file over to my host machine and from there, uploaded the file to the online [SQLite Viewer]( https://inloop.github.io/sqlite-viewer/).
+
+The *urls* table in the database shows the visited URLs and also the *visit_count*.
+
+I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits to either `https://www.facebook.com` or `https://www.live.com`.
+
+:triangular_flag_on_post: **Level 1 Challenge 8 flag: `TISC{2-0-0}`**
+
 <br>
 
 
