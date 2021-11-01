@@ -26,7 +26,7 @@ A closer inspection of the visual waveform also confirmed that the waveform seem
 
 ![image](https://user-images.githubusercontent.com/82754379/139616096-8841626d-8727-44e8-9c38-df7f42f8d182.png)
 
-Transcribing the "dots" and "dashes" we got:
+Transcribing the "dots" and "dashes" we got: 
 ```
 -.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-
 ```
