@@ -121,6 +121,7 @@ base64 -d digits_base64.txt > digits_base64_decoded
 ```
 
 <br>
+
 **base64** complained of invalid input, but the file `digits_base64_decoded` still got written with 14,615 bytes.
 
 Inspecting the file `digits_base64_decoded` in **Ghex** revealed that it could very well be a Zip file!
@@ -128,8 +129,9 @@ Inspecting the file `digits_base64_decoded` in **Ghex** revealed that it could v
 ![image](https://user-images.githubusercontent.com/82754379/139707255-e63f28a2-55f9-47d6-96c7-e3565453a6cc.png)
 
 <br>
+
 Running `unzip -l digits_base64_decoded` confirmed it was a Zip file:
-```
+
 ![image](https://user-images.githubusercontent.com/82754379/139707560-d151b902-d19f-4144-80a5-bf1d8b8a2fd8.png)
 
 ---
