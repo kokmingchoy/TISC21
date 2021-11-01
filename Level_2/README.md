@@ -109,9 +109,17 @@ for i in data:
 
 out_bytes = b''.join(output)
 
-with open("digits_base64", "wb") as f:
+with open("digits_base64.txt", "wb") as f:
     f.write(out_bytes)
     
 ```
+<br>
+Now I performed Base64-decoding on the file `digits_base64`:
+```bash
+base64 -d digits_base64.txt > digits_base64_decoded
+```
+
+Inspecting the file `digits_base64_decoded` in **Ghex** revealed that it could very well be a Zip file!
+
 
 
