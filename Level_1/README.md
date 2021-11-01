@@ -1,6 +1,8 @@
 # Scratching the Surface
 ## Level 1 - Challenge 1
 
+![image](https://user-images.githubusercontent.com/82754379/139613718-bd107b5d-1e7f-484d-a86d-a33ca4d1cf24.png)
+
 A file [file1.wav](https://api.tisc.csit-events.sg/file?id=ckr6sv183004v0838z5e2ioiy&name=file1.wav) was provided for analysis, which supposedly contains a secret message.
 
 Running `file file1.wav` shows it is recognised as a valid audio file:
