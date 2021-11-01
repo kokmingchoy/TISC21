@@ -63,9 +63,23 @@ Being 17 characters in length, this was actually the Level 2 Part 2 flag.
 🚩 **Level 2 Part 2 flag: `TISC{n3vEr_0dd_0r_Ev3n}`**
 
 <br>
+
 ---
 
-Now to look for the Part 1 flag...
+I got the Base32-decoded text into a separate file `dns4_decoded.txt`:
+```bash
+base32 -d dns4.txt > dns4_decoded.txt
+```
+
+Inspecting the contents of `dns4_decoded.txt` in a text editor (I used **Sublime**) revealed that there was only that one flag in there.<br>
+The readable text was all on one single line and portions of the text repeated.<br>
+After the readable text came repeated chunks of data, some of which were non-printable. <br>
+
+![image](https://user-images.githubusercontent.com/82754379/139680345-857b7223-c828-4584-a4a2-cb4ae2566cab.png)
+
+<br>
+I suspect the other flag was to be derived from the data from the 2 digits after the characters "d33d", which I ignored previously.
+
 
 
 
