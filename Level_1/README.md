@@ -42,6 +42,9 @@ The instructions require that this answer be in lowercase.
 
 ## Level 1 - Challenge 2
 
+![image](https://user-images.githubusercontent.com/82754379/139614313-e143e304-b6e8-4579-93d9-43cced08ceb2.png)
+
+
 A file [file2.jpg](https://api.tisc.csit-events.sg/file?id=ckr6swk6d006m0906vot9ga8l&name=file2.jpg) was provided for analysis. Question: What was the modifed time of the image?
 
 Using `file file2.jpg` outputs some file metadata, including a timestamp `2003:08:25 14:55:27`:
@@ -55,6 +58,8 @@ file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, dire
 
 
 ## Level 1 - Challenge 3
+
+![image](https://user-images.githubusercontent.com/82754379/139614379-106d7f89-8c84-4435-a5eb-7d4bd4171999.png)
 
 A file [file3.jpg](https://api.tisc.csit-events.sg/file?id=ckr6sxww900860838aged2020&name=file3.jpg) was provided for analysis. Apparently some secret message is encoded in it.
 
@@ -107,8 +112,9 @@ ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 
 ## Level 1 Challenge 4
 
+![image](https://user-images.githubusercontent.com/82754379/139614542-dd1d1ad5-d4e1-43f4-a035-e0dfab6551d3.png)
+
 This and subsequent challenges in Level 1 are related to the Windows 10 virtual machine provided.<br>
-Question: What is the name of the user?
 
 Running `whoami` from the command prompt shows:
 ```
@@ -122,7 +128,7 @@ desktop-8u7f1gr\adam
 
 ## Level 1 Challenge 5
 
-Question: What time was the user's most recent logon?
+![image](https://user-images.githubusercontent.com/82754379/139614611-6975e690-faca-4fd1-b451-0361ab49b5d7.png)
 
 Starting up the Event Viewer (**eventvwr.msc**) to inspect the **Security** logs for previous logon events.<br>
 We are looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.<br>
@@ -130,6 +136,10 @@ We find such an event (Event ID 4624) at the following timestamp:
 ```
  Logged: 17/6/2021 10:41:37 am
 ```
+
+![image](https://user-images.githubusercontent.com/82754379/139615104-fb46c75b-d525-42bd-9917-364d04cffaf2.png)
+
+
 Assuming this is Singapore local time (UTC+8), converting to UTC we get
 ```
 17/06/2021 02:41:37
@@ -142,7 +152,8 @@ Assuming this is Singapore local time (UTC+8), converting to UTC we get
 
 ## Level 1 Challenge 6
 
-Question: A 7z archive was deleted, what is the value of the file CRC32 hash that is inside the 7z archive?
+![image](https://user-images.githubusercontent.com/82754379/139615174-4b660bf5-9e4e-41fe-b9d9-a6683be762dc.png)
+
 
 There appears to be something in the Recycle Bin. Opening up the Recycle Bin reveals a deleted file `sentosa-sea-aquarium.7z`, which should be the file of interest.
 
@@ -183,9 +194,7 @@ CRC32  for data:              040E23DA
 
 ## Level 1 Challenge 7
 
-Question1: How many users have an RID of 1000 or above on the machine?<br>
-Question2: What is the account name for RID of 501?<br>
-Question3: What is the account name for RID of 503?
+![image](https://user-images.githubusercontent.com/82754379/139615309-73fea1f0-6c61-4e13-bde7-1cded6cb5c8c.png)
 
 From the command prompt, running `wmic useraccount get name,sid` gives us the necessary information:
 ```
@@ -208,9 +217,7 @@ We have the user *DefaultAccount* with RID of 503.
 
 ## Level 1 Challenge 8
 
-Question1: How many times did the user visit https://www.csit.gov.sg/about-csit/who-we-are ?<br>
-Question2: How many times did the user visit https://www.facebook.com ?<br>
-Question3: How many times did the user visit https://www.live.com ?
+![image](https://user-images.githubusercontent.com/82754379/139615369-a9074dcb-887a-46e8-b032-8632b16d47b0.png)
 
 For this challenge we need to inspect the *History* file of Microsoft Edge, which I found at:
 ```
@@ -221,6 +228,8 @@ As this is an SQLite database file, I transfered the *History* file over to my h
 
 The *urls* table in the database shows the visited URLs and also the *visit_count* for each visited URL.
 
+![image](https://user-images.githubusercontent.com/82754379/139615493-9439ea35-3222-42d0-b8a0-2204e6d3bfdd.png)
+
 I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits to either `https://www.facebook.com` or `https://www.live.com`.
 
 :triangular_flag_on_post: **Level 1 Challenge 8 flag: `TISC{2-0-0}`**
@@ -230,7 +239,7 @@ I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits 
 
 ## Level 1 Challenge 9
 
-Question: A device with the drive letter “Z” was connected as a shared folder in VirtualBox. What was the label of the volume? Perhaps the registry can tell us the "connected" drive?
+![image](https://user-images.githubusercontent.com/82754379/139615572-a484659f-24de-4abe-9f09-9368670cad96.png)
 
 The relevant Registry key may be viewed using **regedit**.
 The key I looked at was:
@@ -242,6 +251,9 @@ where I saw an entry for something that could have been the VirtualBox share (i.
 ##VBoxSvr#vm-share
 ```
 
+![image](https://user-images.githubusercontent.com/82754379/139615672-85321f42-3cb2-4087-98a2-276dcc76df45.png)
+
+
 The "label" of the share would have been "vm-share".
 
 :triangular_flag_on_post: **Level 1 Challenge 9 flag: `TISC{vm-share}`**
@@ -251,7 +263,7 @@ The "label" of the share would have been "vm-share".
 
 ## Level 1 Challenge 10
 
-This challenge requires us to look for a file on the Windows 10 virtual machine, which has the SHA1 filehash of **0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13**.
+![image](https://user-images.githubusercontent.com/82754379/139615763-878436d2-f43d-4635-b01c-617151ff61c5.png)
 
 First, I checked against the [VirusTotal database](https://www.virustotal.com/gui/search/0D97DBDBA2D35C37F434538E4DFAA06FCCC18A13) in case this SHA1 hash is for a known Windows executable. There was no result returned by VirusTotal, so I assumed the SHA1 hash is for a custom file created for this challenge, and likely to be in one of the folders owned by the user "adam".
 
@@ -271,7 +283,7 @@ SHA1 hash of c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singap
 0d97dbdba2d35c37f434538e4dfaa06fccc18a13
 ```
 
-I submitted the flag `TISC{otter-singapore.lnk}` but this was rejected. Perhaps the "file which is of interest" referred to the file this LNK file was pointing to. Looking into `otter-singapore.lnk` with **notepad** revealed that the LNK file pointed to `C:\Users\adam\Downloads\otter-singapore.jpg`.
+I submitted the flag `TISC{otter-singapore.lnk}` but this was rejected. Perhaps the "file that is of interest" referred to the file this LNK file was pointing to. Looking into `otter-singapore.lnk` with **notepad** revealed that the LNK file pointed to `C:\Users\adam\Downloads\otter-singapore.jpg`.
 
 :triangular_flag_on_post: **Level 1 Challenge 10 flag: `TISC{otter-singapore.jpg}`**
 
