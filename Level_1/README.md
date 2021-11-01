@@ -3,10 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/82754379/139614121-27c8ff25-c8b9-47b7-8416-4f997bfb93d9.png)
 
-
-A file [file1.wav](https://api.tisc.csit-events.sg/file?id=ckr6sv183004v0838z5e2ioiy&name=file1.wav) was provided for analysis, which supposedly contains a secret message.
-
-Running `file file1.wav` shows it is recognised as a valid audio file:
+Running `file file1.wav` showed it is recognised as a valid audio file:
 ```
 file1.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 11025 Hz
 ```
@@ -14,24 +11,30 @@ file1.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 
 Playing `file1.wav` I detected that the sound appears to be coming only from the left channel, even though the audio file had been encoded in stereo.
 
 Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
-The second audio channel does look like it contains data (at a very low amplitude audio-wise). Perhaps the secret message is encoded in the second channel?
+The second audio channel looked like it contained data (at a very low amplitude audio-wise). Perhaps the secret message was encoded in the second channel?
 
 Extracting the right channel data into its own audio file with **ffmpeg**:
 ```bash
 ffmpeg -i file1.wav -filter:a 'pan=mono|FC=FR' output.wav
 ```
 
-Playing `output.wav` in **Audacity** I hear what sounds like Morse code!
-A closer inspection of the visual waveform also confirms that the waveform seems to look like a series of "dots" and "dashes".
+Playing `output.wav` in **Audacity** I heard what sounded like Morse code!
+A closer inspection of the visual waveform also confirmed that the waveform seemed to look like a series of "dots" and "dashes".
+
+![image](https://user-images.githubusercontent.com/82754379/139616096-8841626d-8727-44e8-9c38-df7f42f8d182.png)
+
 Transcribing the "dots" and "dashes" we get:
 ```
 -.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-
 ```
 
-Throwing the Morse code into an online Morse Code Translator (https://morsedecoder.com/) returns the following text:
+Throwing the Morse code into an online Morse Code Translator (https://morsedecoder.com/) returned the following text:
 ```
 CSITISLOCATEDINSCIENCEPARK
 ```
+
+![image](https://user-images.githubusercontent.com/82754379/139616318-a8741bbe-a778-400f-8b32-82dfd4d235fd.png)
+
 
 The instructions require that this answer be in lowercase.
 
