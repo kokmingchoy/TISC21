@@ -148,11 +148,12 @@ grep -r "TISC" *
 
 Found the flag in `word/theme/theme1.xml`:
 
-![image](https://user-images.githubusercontent.com/82754379/139709232-12bfc5e2-ef64-4206-9481-f8407b9d6df9.png)
+![image](https://user-images.githubusercontent.com/82754379/139710038-577f882b-c578-4181-9230-f4773b51a8ae.png)
+
 
 🚩 **Level 2 Part 1 flag: `TISC{1iv3_n0t_0n_3vi1}`**
 
 ---
 
-
+👍 **Level 2 challenges completed!**
 
