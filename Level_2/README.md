@@ -31,7 +31,7 @@ WWK013TUOVWS01AZLHMVZ11XIYLTFY33QHAZLMN07RSW45DF01ONYXKZJ01AOZUXIY01LFEBYG6204TU
 
 I investigated the contents of `dns2.txt` using [CyberChef](https://gchq.github.io/CyberChef/) in an attempt to figure out what kind of encoding it may be in, but did not have any conclusive results initially.
 
-Then I noticed that the characters "d33d" in the domain name was _always_ followed by 2 digits. I thought it would be very unlikely that any encoding scheme would have 2 digits occurring regularly, separated by 7 other characters. So I decided to strip out those 2 digits following the characters "d33d" and collected the 7-character strings into a single file:
+Then I noticed that the characters "d33d" in the domain name were _always_ followed by 2 digits. I thought it would be very unlikely that any encoding scheme would have 2 digits occurring at regular intervals, separated by 7 other characters. So I decided to ignore those 2 digits following the characters "d33d" and collected the 7-character strings into a single file:
 ```bash
 tshark -r traffic.pcap | sed -n -r 's/.*?d33d..(.*?)\.ten.*/\1/p' >> dns3.txt
 tr -d '\n' < dns3.txt > dns4.txt
