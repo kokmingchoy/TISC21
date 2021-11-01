@@ -85,6 +85,7 @@ I grabbed those digits from `traffic.pcap` and put them in a file `digits.txt`:
 tshark -r traffic.pcap | sed -n -r 's/.*d33d(..).*/\1/p' > digits.txt
 ```
 
+Inspecting the numbers in `digits.txt` I noted that the numbers ranged from 01 through 64, and all numbers in this range had appeared in the file.
 
 
 
