@@ -92,6 +92,26 @@ Inspecting the numbers in `digits.txt` using CyberChef, I noted that the numbers
 
 The use of 64 unique values to encode data strongly suggests the use of Base64 encoding, although we would have to translate the numerical values in `digits.txt` to something resembling Base64-encoded data.
 
+I wrote the following Python script to convert the data (in Decimal) in `digits.txt` to hopefully valid Base64-encoded data in `digits_base64`:
 
+```python
+# Our Base64 translation table
+table = [b'A', b'B', b'C', b'D', b'E', b'F', b'G', b'H', b'I', b'J', b'K', b'L', b'M', b'N', b'O', b'P', b'Q', b'R', b'S', b'T', b'U', b'V', b'W',
+b'X', b'Y', b'Z', b'a', b'b', b'c', b'd', b'e', b'f', b'g', b'h', b'i', b'j', b'k', b'l', b'm', b'n', b'o', b'p', b'q', b'r', b's', b't',
+b'u', b'v', b'w', b'x', b'y', b'z', b'0', b'1', b'2', b'3', b'4', b'5', b'6', b'7', b'8', b'9', b'+', b'/']
+
+with open("digits.txt", "r") as f:
+    data = f.readlines()
+
+output = []
+for i in data:
+    output.append(table[int(i)-1])
+
+out_bytes = b''.join(output)
+
+with open("digits_base64", "wb") as f:
+    f.write(out_bytes)
+    
+```
 
 
