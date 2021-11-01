@@ -80,6 +80,10 @@ After the readable text came repeated chunks of data, some of which were non-pri
 <br>
 I suspected the other flag was to be obtained from the data derived from the 2 digits after the characters "d33d", which I ignored previously.
 
+I grabbed those digits from `traffic.pcap` and put them in a file `digits.txt`:
+```bash
+tshark -r traffic.pcap | sed -n -r 's/.*d33d(..).*/\1/p' > digits.txt
+```
 
 
 
