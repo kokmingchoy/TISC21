@@ -155,5 +155,5 @@ Found the flag in `word/theme/theme1.xml`:
 
 ---
 
-👍 **Level 2 challenges completed!**
+👍 **Level 2 challenges have been completed!**
 
