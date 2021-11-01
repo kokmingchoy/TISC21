@@ -36,7 +36,7 @@ Throwing the Morse code into an online Morse Code Translator (https://morsedecod
 CSITISLOCATEDINSCIENCEPARK
 ```
 
-![image](https://user-images.githubusercontent.com/82754379/139616318-a8741bbe-a778-400f-8b32-82dfd4d235fd.png)
+![image](https://user-images.githubusercontent.com/82754379/139617226-a522288a-c7ac-4ccd-8a76-1012d61cb62a.png)
 
 
 The instructions required that this answer be in lowercase.
