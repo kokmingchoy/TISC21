@@ -136,7 +136,23 @@ Running `unzip -l digits_base64_decoded` confirmed it was a Zip file:
 
 ---
 
+I proceeded to unzip the contents of `digits_base64_decoded` into its own directory:
+```bash
+unzip -x digits_base64_decoded
+```
 
+The flag should be in one of the extracted files. Running **grep** to search recursively through the files:
+```bash
+grep -r "TISC" *
+```
+
+Found the flag in `word/theme/theme1.xml`:
+
+![image](https://user-images.githubusercontent.com/82754379/139709232-12bfc5e2-ef64-4206-9481-f8407b9d6df9.png)
+
+🚩 **Level 2 Part 1 flag: `TISC{1iv3_n0t_0n_3vi1}`**
+
+---
 
 
 
