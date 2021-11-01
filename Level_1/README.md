@@ -107,7 +107,7 @@ NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRNE
 ![image](https://user-images.githubusercontent.com/82754379/139616697-35f48a1a-283e-47eb-999c-9578f7af9003.png)
 
 
-The text looks like it could have been encoded with some simple replacement ciper.
+The text looked like it could have been encoded with some simple substition ciper.
 Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)&input=TkFGSlJFIEdCIEdVVkYgUFVOWVlSQVRSIFZGIFVSRVIgTkNDWVJQTkVFQkdDUk5F) produced the clear text:
 ```
 ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
