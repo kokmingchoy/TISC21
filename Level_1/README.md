@@ -11,6 +11,9 @@ file1.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 
 Playing `file1.wav` I detected that the sound appeared to be coming only from the left channel, even though the audio file had been encoded in stereo.
 
 Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
+
+![image](https://user-images.githubusercontent.com/82754379/139616997-6c916f9e-8251-4d2f-9052-b0cbfd8f045d.png)
+
 The second audio channel looked like it contained data (at a very low amplitude audio-wise). Perhaps the secret message was encoded in the second channel?
 
 Extracting the right channel data into its own audio file with **ffmpeg**:
