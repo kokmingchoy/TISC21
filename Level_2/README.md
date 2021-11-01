@@ -85,7 +85,13 @@ I grabbed those digits from `traffic.pcap` and put them in a file `digits.txt`:
 tshark -r traffic.pcap | sed -n -r 's/.*d33d(..).*/\1/p' > digits.txt
 ```
 
-Inspecting the numbers in `digits.txt` I noted that the numbers ranged from 01 through 64, and all numbers in this range had appeared in the file.
+Inspecting the numbers in `digits.txt` using CyberChef, I noted that the numbers ranged from 01 through 64, and all numbers in this range had appeared in the file with more or less an even frequency distribution.
+
+![image](https://user-images.githubusercontent.com/82754379/139703529-729463ff-aaf5-4cc5-b49e-cfa60c8cea21.png)
+<br>
+
+The use of 64 unique values to encode data strongly suggests the use of Base64 encoding, although we would have to translate the numerical values in `digits.txt` to something resembling Base64-encoded data.
+
 
 
 
