@@ -132,6 +132,8 @@ Running `unzip -l digits_base64_decoded` confirmed it was a Zip file:
 ```
 ![image](https://user-images.githubusercontent.com/82754379/139707560-d151b902-d19f-4144-80a5-bf1d8b8a2fd8.png)
 
+---
+
 
 
 
