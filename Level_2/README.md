@@ -114,12 +114,12 @@ with open("digits_base64.txt", "wb") as f:
     
 ```
 <br>
-Now I performed Base64-decoding on the file `digits_base64`:
+
+Now I performed Base64-decoding on the file `digits_base64.txt`:
 ```bash
 base64 -d digits_base64.txt > digits_base64_decoded
 ```
 
 Inspecting the file `digits_base64_decoded` in **Ghex** revealed that it could very well be a Zip file!
-
 
 
