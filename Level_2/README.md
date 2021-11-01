@@ -92,7 +92,7 @@ Inspecting the numbers in `digits.txt` using CyberChef, I noted that the numbers
 
 The use of 64 unique values to encode data strongly suggests the use of Base64 encoding, although we would have to translate the numerical values in `digits.txt` to something resembling Base64-encoded data.
 
-I wrote the following Python script to convert the data (in Decimal) in `digits.txt` to hopefully valid Base64-encoded data in `digits_base64`:
+I wrote the following Python script to convert the data (in Decimal) in `digits.txt` to hopefully valid Base64-encoded data in `digits_base64.txt`:
 
 ```python
 # Our Base64 translation table
