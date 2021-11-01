@@ -8,7 +8,7 @@ Running `file file1.wav` showed it is recognised as a valid audio file:
 file1.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 11025 Hz
 ```
 
-Playing `file1.wav` I detected that the sound appears to be coming only from the left channel, even though the audio file had been encoded in stereo.
+Playing `file1.wav` I detected that the sound appeared to be coming only from the left channel, even though the audio file had been encoded in stereo.
 
 Opening `file1.wav` in **Audacity** to have a look at the audio data visually.
 The second audio channel looked like it contained data (at a very low amplitude audio-wise). Perhaps the secret message was encoded in the second channel?
