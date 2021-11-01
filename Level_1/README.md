@@ -268,10 +268,10 @@ SHA1 hash of c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singap
 0d97dbdba2d35c37f434538e4dfaa06fccc18a13
 ```
 
-The following submissions were **REJECTED**:
-```
-TISC{otter-singapore.lnk}
-TISC{c:\Users\adam\AppData\Roaming\Microsoft\Windows\Recent\otter-singapore.lnk}
-TISC{otter-singapore,lnk}
-TISC{OTTER-SINGAPORE.LNK}
-```
+I submitted the flag `TISC{otter-singapore.lnk}` but this was rejected. Perhaps the "file which is of interest" referred to the file this LNK file was pointing to. Looking into `otter-singapore.lnk` with **notepad** revealed that the LNK file pointed to `C:\Users\adam\Downloads\otter-singapore.jpg`.
+
+:triangular_flag_on_post: **Level 1 Challenge 10 flag: `TISC{otter-singapore.jpg}`**
+
+---
+
+👍 **Level 1 Challenges have been completed!**
