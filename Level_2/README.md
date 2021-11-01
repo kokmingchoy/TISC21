@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/82754379/139622184-2c5a46b3-5704-4943-80a6-b1217fa1e746.png)
 
-Viewing the provided `traffic.pcap` file in **Wireshark**, I noted that it contained data for 19,487 packets of DNS query responses for the query name in the following format:<br>
+Viewing the provided `traffic.pcap` file in **Wireshark**, I noted that it contained data for 19,487 packets of DNS query responses for various query names in the following format:<br>
 > d33d**xxxxxxxxx**.tentopspot.net
 
 ![image](https://user-images.githubusercontent.com/82754379/139656227-75c722ba-2e62-42ac-85b6-4dff1c31797e.png)
