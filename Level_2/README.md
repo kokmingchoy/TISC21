@@ -46,7 +46,8 @@ TUORUXI33SEB2HK4TQNFZSYIDTMVSCAZTBMNUWY2LTNFZSA2LQON2W2LRAMR2WS4ZAOZSWYIDJNZ2GK4
 (truncated for brevity)
 ```
 
-I noted that there were only uppercase characters in there, so the data could not be Base64-encoded (Base64 uses the character set `A-Za-z0-9+/=`).
+I noted that there were only uppercase characters in there, so the data could not be Base64-encoded.<br>
+(Base64 uses the character set `A-Za-z0-9+/=`).
 What about Base32 encoding? (Base32 uses the character set `A-Z2-7=` and the digits '0' and '1' were noticeably missing from the data in `dns4.txt`)
 
 Using [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base32('A-Z2-7%3D',true)&input=TlJYWEVaTE5FQlVYQTQzVk5VUUdJMDQzM01ONVpDMDJBNDNKT1FRMDJHQzNMRk9RMTdXQ0FRS0NJMDFOQ0VLUlNIMDFKQkVVVVMyMDFNSlZIRTZVMDFDUktKSlZJMDlWS1dLNU1GMDFTV1JRR0VaMDFER05CVkdZMDEzVFFPTEJNMDFKUldJWkxHMDlNNVVHUzJU) with the "From Base32" recipe revealed readable text:
