@@ -23,7 +23,7 @@ A closer inspection of the visual waveform also confirmed that the waveform seem
 
 ![image](https://user-images.githubusercontent.com/82754379/139616096-8841626d-8727-44e8-9c38-df7f42f8d182.png)
 
-Transcribing the "dots" and "dashes" we get:
+Transcribing the "dots" and "dashes" we got:
 ```
 -.-. ... .. - .. ... .-.. --- -.-. .- - . -.. .. -. ... -.-. .. . -. -.-. . .--. .- .-. -.-
 ```
@@ -36,7 +36,7 @@ CSITISLOCATEDINSCIENCEPARK
 ![image](https://user-images.githubusercontent.com/82754379/139616318-a8741bbe-a778-400f-8b32-82dfd4d235fd.png)
 
 
-The instructions require that this answer be in lowercase.
+The instructions required that this answer be in lowercase.
 
 :triangular_flag_on_post: **Level 1 Challenge 1 flag: `TISC{csitislocatedinsciencepark}`**
 
@@ -47,8 +47,6 @@ The instructions require that this answer be in lowercase.
 
 ![image](https://user-images.githubusercontent.com/82754379/139614313-e143e304-b6e8-4579-93d9-43cced08ceb2.png)
 
-
-A file [file2.jpg](https://api.tisc.csit-events.sg/file?id=ckr6swk6d006m0906vot9ga8l&name=file2.jpg) was provided for analysis. Question: What was the modifed time of the image?
 
 Using `file file2.jpg` outputs some file metadata, including a timestamp `2003:08:25 14:55:27`:
 ```
@@ -64,49 +62,56 @@ file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, dire
 
 ![image](https://user-images.githubusercontent.com/82754379/139614379-106d7f89-8c84-4435-a5eb-7d4bd4171999.png)
 
-A file [file3.jpg](https://api.tisc.csit-events.sg/file?id=ckr6sxww900860838aged2020&name=file3.jpg) was provided for analysis. Apparently some secret message is encoded in it.
-
-Running `file file3.jpg` gives us:
+Running `file file3.jpg` gave:
 ```
 file3.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, progressive, precision 8, 360x360, components 3
 ```
 
 ---
 
-Running `strings file3.jpg` does not reveal any readable text other than the string `picture_with_text.jpg` (which appears twice in the file).
+Running `strings file3.jpg` did not reveal any readable text other than the string `picture_with_text.jpg` (which appeared twice in the file).
 
 ---
 
-Inspecting the contents of `file3.jpg` with a hex editor (GHex) we note that after the bytes 'FF D9' (which terminate a normal JPEG file) we see additional data beginning with the bytes 'PK' (which suggests there might be a Zip file there).
+Inspecting the contents of `file3.jpg` with a hex editor (GHex) I noted that after the bytes 'FF D9' (which terminate a normal JPEG file) I saw additional data beginning with the bytes 'PK' (which suggested there might be a Zip file there).
+
+![image](https://user-images.githubusercontent.com/82754379/139616617-30ed6016-1a4c-4b3b-b0ad-6c3f2fa0ec8c.png)
+
 
 Using `dd` to extract the bytes from `file3.jpg` from the offset 0x1C10 (decimal 7184) to obtain `file3_a`:
 ```
 dd if=file3.jpg bs=1 skip=7184 of=file3_a
 ```
 
-Running `file file3_a` on it confirms it is a valid Zip file:
+Running `file file3_a` on it confirmed it is a valid Zip file:
 ```
 file3_a: Zip archive data, at least v2.0 to extract
 ```
 
-Unzipping with `unzip file3_a` gives us the file `picture_with_text.jpg`.
-But this is not a valid JPEG file.
-It does not display in an image viewer and `file picture_with_text.jpg` also does not recognise it as a JPEG file:
+Unzipping with `unzip file3_a` produced the file `picture_with_text.jpg`.
+But this was not a valid JPEG file.
+It did not display in an image viewer and `file picture_with_text.jpg` also did not recognise it as a JPEG file:
 ```
 picture_with_text.jpg: data
 ```
 
-Inspecting `picture_with_text.jpg` in GHex we see that there are some additional bytes before the proper start of the JPEG file.
-These bytes are:
+Inspecting `picture_with_text.jpg` in GHex I saw that there were some additional bytes before the proper start of the JPEG file.
+These bytes were:
 ```
 NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRNE
 ```
+
+![image](https://user-images.githubusercontent.com/82754379/139616697-35f48a1a-283e-47eb-999c-9578f7af9003.png)
+
 
 The text looks like it could have been encoded with some simple replacement ciper.
 Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)&input=TkFGSlJFIEdCIEdVVkYgUFVOWVlSQVRSIFZGIFVSRVIgTkNDWVJQTkVFQkdDUk5F) produces the clear text:
 ```
 ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 ```
+
+![image](https://user-images.githubusercontent.com/82754379/139616807-f7b700bd-c9df-450c-a7af-713762c20bcf.png)
+
 
 :triangular_flag_on_post: **Level 1 Challenge 3 flag: `TISC{APPLECARROTPEAR}`**
 
