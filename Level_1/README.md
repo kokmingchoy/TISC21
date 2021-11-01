@@ -300,4 +300,4 @@ I submitted the flag `TISC{otter-singapore.lnk}` but this was rejected. Perhaps 
 
 ---
 
-👍 **Level 1 Challenges have been completed!**
+👍 **Level 1 Challenges have been completed!** 
