@@ -51,7 +51,7 @@ The instructions required that this answer be in lowercase.
 ![image](https://user-images.githubusercontent.com/82754379/139614313-e143e304-b6e8-4579-93d9-43cced08ceb2.png)
 
 
-Using `file file2.jpg` outputs some file metadata, including a timestamp `2003:08:25 14:55:27`:
+Using `file file2.jpg` provided some file metadata, including a timestamp `2003:08:25 14:55:27`:
 ```
 file2.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=11, description=          , manufacturer=NIKON, model=E885, orientation=upper-left, xresolution=216, yresolution=224, resolutionunit=2, software=E885v1.1, datetime=2003:08:25 14:55:27], baseline, precision 8, 1024x768, components 3
 ```
