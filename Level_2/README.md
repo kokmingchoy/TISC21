@@ -75,10 +75,10 @@ Inspecting the contents of `dns4_decoded.txt` in a text editor (I used **Sublime
 The readable text was all on one single line and portions of the text repeated.<br>
 After the readable text came repeated chunks of data, some of which were non-printable. <br>
 
-![image](https://user-images.githubusercontent.com/82754379/139680345-857b7223-c828-4584-a4a2-cb4ae2566cab.png)
+![image](https://user-images.githubusercontent.com/82754379/139680592-907a5cf3-94de-49e4-91ee-3afd79505c12.png)
 
 <br>
-I suspect the other flag was to be derived from the data from the 2 digits after the characters "d33d", which I ignored previously.
+I suspected the other flag was to be obtained from the data derived from the 2 digits after the characters "d33d", which I ignored previously.
 
 
 
