@@ -1,6 +1,7 @@
-# Level 2 - Part 1
+# Level 2 - Parts 1 and 2
 
 ![image](https://user-images.githubusercontent.com/82754379/139622184-2c5a46b3-5704-4943-80a6-b1217fa1e746.png)
+![image](https://user-images.githubusercontent.com/82754379/139627876-19431090-dff4-46c9-a286-fb7291b39771.png)
 
 Viewing the provided `traffic.pcap` file in **Wireshark**, I noted that it contained data for 19,487 packets of DNS query responses for various query names in the following format:<br>
 > d33d**xxxxxxxxx**.tentopspot.net
@@ -54,13 +55,16 @@ Using [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base32('A-Z2-7%3
 
 ![image](https://user-images.githubusercontent.com/82754379/139676359-ba09f563-0e50-4f47-9fbf-b224ae55c96c.png)
 
-More importantly, it revealed our flag!
+More importantly, it revealed our flag! <br>
+Being 17 characters in length, this was actually the Level 2 Part 2 flag.
 
-🚩 **Level 2 Part 1 flag: `TISC{n3vEr_0dd_0r_Ev3n}`**
+🚩 **Level 2 Part 2 flag: `TISC{n3vEr_0dd_0r_Ev3n}`**
 
 <br>
+---
+
+Now to look for the Part 1 flag...
 
 
-# Level 2 - Part 2
 
-![image](https://user-images.githubusercontent.com/82754379/139627876-19431090-dff4-46c9-a286-fb7291b39771.png)
+
