@@ -153,6 +153,12 @@ I don't think the content means anything, but may require further investigation 
 
 ![Screenshot from 2021-11-03 01-30-20](https://user-images.githubusercontent.com/82754379/139915914-b08c8a28-7ce0-403c-957e-fa7be8000505.png)
 
+---
+
+Running **sqlmap** against **/login.php**:
+```bash
+sqlmap -forms --crawl=2 -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/login.php
+```
 
 
 
