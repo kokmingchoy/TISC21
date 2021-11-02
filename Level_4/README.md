@@ -16,6 +16,29 @@ There was nothing that stood out as interesting, except for the clickable text "
 
 Reviewing the source code for the online form revealed that submission of the form will redirect back to "/", which basically meant it did nothing. 
 (Hence the message on-screen which said "*The donation is temporarily disabled. Please do not submit.*") <br>
-In this case, there must be some other URL endpoint at the same site that will process the form submission and we need to identify that.
+
+---
+
+I ran **dirbuster** on the site in hopes of finding additional PHP or HTML files which might progress the investigation. But after running for more than an hour, I only got the following results:
+
+![Screenshot from 2021-11-02 21-05-10](https://user-images.githubusercontent.com/82754379/139853231-04c68ff0-92e8-4cd8-87c3-a035ca10e185.png)
+
+Next, I referred to the free hint:
+
+![Screenshot from 2021-11-02 20-26-12](https://user-images.githubusercontent.com/82754379/139853304-908ebc8d-1f0f-47f5-a588-f1a3febeecba.png)
+
+<br>
+
+Researching **Magecart** and their associated techniques, I found a an [article](https://www.darkreading.com/attacks-breaches/magecart-how-its-attack-techniques-evolved) that mentioned they had been known to hide malicious payloads in images, including the *favicon* image. <br>
+Here's the paragraph of interest reproduced from the [article](https://www.darkreading.com/attacks-breaches/magecart-how-its-attack-techniques-evolved):
+
+![image](https://user-images.githubusercontent.com/82754379/139856360-6d37886a-31c0-4cbe-9064-d0ea63f78260.png)
+
+---
+
+
+
+
+
 
 
