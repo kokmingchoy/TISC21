@@ -139,7 +139,13 @@ It appeared I have found:
 ![Screenshot from 2021-11-03 01-27-17](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
 
 The timestamps under the "Last viewed by admin" column kept updating regularly when the page is refreshed. <br>
-But the names of the HTML files on the screen do not appear to change between page refreshes.
+But the names of the 30 HTML files on the screen do not appear to change between page refreshes. <br>
+The names of the HTML files are clickable links but every link seemed to lead to a page that displayed the same content as every other link. <br>
+
+However, that content changes with time. Sometimes it was a series of the letter "a", sometimes it was a series of the characters "<3".
+I don't think the content means anything, but may require further investigation later.
+
+
 
 ---
 
