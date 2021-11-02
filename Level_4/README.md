@@ -155,10 +155,17 @@ I don't think the content means anything, but may require further investigation 
 
 ---
 
+### Testing for SQL Injection Vulnerability (/login.php)
+
 Running **sqlmap** against **/login.php**:
 ```bash
 sqlmap -forms --crawl=2 -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/login.php
 ```
 
+**sqlmap** reported that the *username* and *password* fields in the **Login** screen do not seem to be injectable.
 
+<br>
 
+### Password Guessing (/login.php)
+
+Tried password guessing against the **/login.php** screen using ???
