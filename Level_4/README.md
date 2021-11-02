@@ -84,4 +84,26 @@ New record created successfully
 
 It appeared that this PHP file was interacting with a database. Perhaps I could find and exploit a vulnerability in this PHP file that would allow me to extract data from the database.
 
+First, I created a file `post.txt` which contained the bytes that would have been sent by a HTTP client for the POST request:
+
+```
+POST /xcvlosxgbtfcofovywbxdawregjbzqta.php HTTP/1.1
+Host: s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Length: 50
+Content-Type: application/x-www-form-urlencoded
+
+14c4b06b824ec593239362517f538b29=Hi%20from%20scada
+```
+
+The above file content was mostly derived from output from the **curl** command (with the **-v** for "verbose" switch) used to post the data to the target URL, except for the last line (the POST data) which I added manually.
+
+Next, I ran **sqlmap** to try different data to inject into the _14c4b06b824ec593239362517f538b29_ parameter as it makes the POST request to the target URL:
+
+```bash
+sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
+```
+
+**sqlmap** reported that the parameter _14c4b06b824ec593239362517f538b29_ "does not seem to be injectable" and suggested I increased the "--level" or "--risk" options if I wished to perform more tests. So, I did.
 
