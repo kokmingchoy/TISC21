@@ -29,3 +29,14 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 0             0x0             PC bitmap, Windows 3.x format,, 99 x 99 x 8
 
 ```
+
+---
+
+The "XML file" in `1.bmp` looked promising. Extracted it to a separate file `1.xml` with **dd**:
+
+```bash
+dd if=1.bmp of=1.xml bs=1 skip=2020
+```
+
+The `1.xml` file comprised both printable text and non-printable bytes. <br>
+There were text strings in `1.xml` which suggested some compiled C program was embedded in this file.
