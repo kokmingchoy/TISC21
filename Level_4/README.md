@@ -105,5 +105,13 @@ Next, I ran **sqlmap** to try different data to inject into the _14c4b06b824ec59
 sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
 ```
 
-**sqlmap** reported that the parameter _14c4b06b824ec593239362517f538b29_ "does not seem to be injectable" and suggested I increased the "--level" or "--risk" options if I wished to perform more tests. So, I did.
+**sqlmap** reported that the parameter _14c4b06b824ec593239362517f538b29_ "does not seem to be injectable" and suggested I increased the "--level" or "--risk" options if I wished to perform more tests. I did retry with "--level 5" but still **sqlmap** did not manage to perform any SQL injection successfully.
+
+---
+
+When running **curl** with the **-v** switch it was determined that the target was running **Apache 2.4.25** and **PHP 7.2.2** <br>
+Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP.
+
+
+
 
