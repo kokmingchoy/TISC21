@@ -32,11 +32,14 @@ Next, I referred to the free hint:
 Researching **Magecart** and their associated techniques, I found a an [article](https://www.darkreading.com/attacks-breaches/magecart-how-its-attack-techniques-evolved) that mentioned they had been known to hide malicious payloads in images, including the *favicon* image. <br>
 Here's the paragraph of interest reproduced from the [article](https://www.darkreading.com/attacks-breaches/magecart-how-its-attack-techniques-evolved):
 
+---
+
 ![image](https://user-images.githubusercontent.com/82754379/139856360-6d37886a-31c0-4cbe-9064-d0ea63f78260.png)
 
 ---
 
-
+Looks like I should take a closer look at the _favicon_ and other images downloaded for display on the _checkout.php_ page.
+___
 
 
 
