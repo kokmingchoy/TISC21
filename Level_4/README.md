@@ -8,9 +8,8 @@ Navigating to the provided [link](http://wp6p6avs8yncf6wuvdwnpq8lfdhyjjds.ctf.sg
 
 <br>
 
-There was nothing that stood out as interesting, except for the clickable text "*Click here to pay your ransom!*", which opened up an online form:
+There was nothing that stood out as interesting, except for the clickable text "*Click here to pay your ransom!*" at the top right corner of the page, which directed the browser to an online form:
 
 ![Screenshot from 2021-11-02 17-57-06](https://user-images.githubusercontent.com/82754379/139825417-c48f6893-f30b-4e14-b4a4-953f9dc73eb5.png)
-
 
 There is probably some vulnerability behind this form that I am meant to discover and exploit.
