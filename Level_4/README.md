@@ -13,3 +13,11 @@ There was nothing that stood out as interesting, except for the clickable text "
 ![Screenshot from 2021-11-02 17-57-06](https://user-images.githubusercontent.com/82754379/139825417-c48f6893-f30b-4e14-b4a4-953f9dc73eb5.png)
 
 There is probably some vulnerability behind this form that I am meant to discover and exploit.
+
+---
+
+Reviewing the source code for the online form revealed that submission of the form will redirect back to "/", which basically meant it did nothing. <br>
+(Hence the message on-screen which said "*The donation is temporarily disabled. Please do not submit.*") <br>
+If I guessed right, there must be some other URL endpoint at the same site that will process the form submission and we need to identify that.
+
+
