@@ -82,3 +82,6 @@ and got the one-line output:
 New record created successfully
 ```
 
+It appeared that this PHP file was interacting with a database. Perhaps I could find and exploit a vulnerability in this PHP file that would allow me to extract data from the database.
+
+
