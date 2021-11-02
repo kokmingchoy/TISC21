@@ -110,7 +110,20 @@ sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
 ---
 
 When running **curl** with the **-v** switch it was determined that the target was running **Apache 2.4.25** and **PHP 7.2.2** <br>
-Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP?
+Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP? <br>
+
+---
+
+I tried running **dirbuster** against `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/` and hit on on something!
+
+![Screenshot from 2021-11-03 01-17-49](https://user-images.githubusercontent.com/82754379/139913891-2b130c26-e955-48b7-8018-04288126d2f5.png)
+
+<br>
+
+It appeared I have found: 
+- a [Login](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/login.php) screen (I shall try **sqlmap** against it later),
+- a [welcome](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/index.php) and 
+- a [data](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data.php) with a list of names of HTML files.
 
 
 
