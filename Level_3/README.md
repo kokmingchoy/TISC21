@@ -32,11 +32,11 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 ---
 
-The "XML file" in `1.bmp` looked promising. Extracted it to a separate file `1.xml` with **dd**:
+The indicated contents in `1.bmp` looked promising. Extracted the revelant portions to separate files `bmp1_1` and `bmp1_2` with **dd**:
 
 ```bash
-dd if=1.bmp of=1.xml bs=1 skip=2020
+dd if=1.bmp of=bmp1_1 bs=1 skip=1666 count=354
+dd if=1.bmp of=bmp1_2 bs=1 skip=2020
 ```
 
-The `1.xml` file comprised both printable text and non-printable bytes. <br>
-There were text strings in `1.xml` which suggested some compiled C program was embedded in this file.
+
