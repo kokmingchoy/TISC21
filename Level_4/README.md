@@ -110,7 +110,7 @@ sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
 ---
 
 When running **curl** with the **-v** switch it was determined that the target was running **Apache 2.4.25** and **PHP 7.2.2** <br>
-Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP.
+Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP?
 
 
 
