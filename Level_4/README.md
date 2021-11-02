@@ -16,7 +16,7 @@ There is probably some vulnerability behind this form that I am meant to discove
 
 ---
 
-Reviewing the source code for the online form revealed that submission of the form will redirect back to "/", which basically meant it did nothing. <br>
+Reviewing the source code for the online form revealed that submission of the form will redirect back to "/", which basically meant it did nothing. 
 (Hence the message on-screen which said "*The donation is temporarily disabled. Please do not submit.*") <br>
 If I guessed right, there must be some other URL endpoint at the same site that will process the form submission and we need to identify that.
 
