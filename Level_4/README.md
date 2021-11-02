@@ -122,8 +122,30 @@ I tried running **dirbuster** against `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.c
 
 It appeared I have found: 
 - a [Login](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/login.php) screen (I shall try **sqlmap** against it later),
-- a [welcome](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/index.php) and 
-- a [data](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data.php) with a list of names of HTML files.
+- a [welcome](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/index.php) screen and 
+- a [data](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data.php) screen with a list of names of HTML files.
+
+---
+
+## Welcome screen (/index.php)
+
+![Screenshot from 2021-11-03 01-24-25](https://user-images.githubusercontent.com/82754379/139914881-5be91368-d608-46a4-a489-7a4c7053d727.png)
+
+
+---
+
+## Data screen (/data.php)
+
+![Screenshot from 2021-11-03 01-27-17](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
+
+The timestamps under the "Last viewed by admin" column kept updating regularly when the page is refreshed. <br>
+But the names of the HTML files on the screen do not appear to change between page refreshes.
+
+---
+
+## Login screen (/login.php)
+
+![Screenshot from 2021-11-03 01-30-20](https://user-images.githubusercontent.com/82754379/139915914-b08c8a28-7ce0-403c-957e-fa7be8000505.png)
 
 
 
