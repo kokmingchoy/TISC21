@@ -178,3 +178,5 @@ To work around this, I made a copy of the original password file, took out the l
 hydra -l admin -p ./newpassword.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
 ```
 
+No password found with this password list. On a hunch, I decided to generate a custom password list comprising 10-character words from the letters "PALINDROME", with various combinations of different letter case, e.g. "Palindrome", "PALINDROME", "PalinDrome".
+
