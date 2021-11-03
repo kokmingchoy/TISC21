@@ -53,7 +53,7 @@ and continued into the middle portion of `bmp1_1`:
 soft-com:asm.v1' manifestVersion='1.0'>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
     <security>
-      <requestedPrivileges
+      <requestedPrivileges>
 ```
 
 and then ended at the _beginning_ of `bmp1_1`:
@@ -65,6 +65,12 @@ and then ended at the _beginning_ of `bmp1_1`:
 </assembly>
 ```
 
-As unfamiliar as I am with the application manifest or how it may be packed into a final executable, I do not know if this is normal or intentionally placed out-of-sequence. Even if I were to be able to re-assemble the manifest in the correct order, I do not know where to put this XML code in this mass of bytes, to derive the final file which I may then load into a Windows debugger.
+As unfamiliar as I am with the application manifest or how it may be packed into a final executable, I do not know if this is normal or intentionally placed out-of-sequence. Even if I were able to re-assemble the manifest in the correct order, I do not know where to put this XML snippet in the mass of bytes, to derive the final file which I may then load into a Windows debugger.
+
+---
+
+Observations about `2.bmp`: Although **binwalk** did not indicate other filetypes lurking within the BMP file, using **GHex** I saw that there were readable English words at the end of the file (from offset 0x4FE, or offset 1278 in decimal). I suspect these words may be used by the Windows program embedded in `1.bmp`.
+Perhaps the combination of some of these words lead to the final "encryption key" that I needed to find?
+
 
 😞 **I am officially out-of-my-depth here**
