@@ -32,11 +32,39 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 ---
 
-The indicated contents in `1.bmp` looked promising. Extracted the revelant portions to separate files `bmp1_1` and `bmp1_2` with **dd**:
+The indicated sub-contents in `1.bmp` looked promising. Extracted the revelant portions to separate files `bmp1_1` and `bmp1_2` with **dd**:
 
 ```bash
 dd if=1.bmp of=bmp1_1 bs=1 skip=1666 count=354
 dd if=1.bmp of=bmp1_2 bs=1 skip=2020
 ```
 
+`bmp1_1` seemed to contain some fragment of an application manifest. <br>
+`bmp1_2` contained part of what appeared to be the same application manifest, and probably also the compiled code and symbols for some Windows app. <br>
 
+Some observations: The application manifest seemed to start at the beginning of `bmp1_2`, that is:
+```
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<assembly xmlns='urn:schemas-micr
+```
+
+and continued into the middle portion of `bmp1_1`:
+```
+soft-com:asm.v1' manifestVersion='1.0'>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges
+```
+
+and then ended at the _beginning_ of `bmp1_1`:
+```
+        <requestedExecutionLevel level='asInvoker' uiAccess='false' />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>
+```
+
+As unfamiliar as I am with the application manifest or how it may be packed into a final executable, I do not know if this is normal or intentionally placed out-of-sequence. Even if I were to be able to re-assemble the manifest in the correct order, I do not know where to put this XML code in this mass of bytes, to derive the final file which I may then load into a Windows debugger.
+
+😞 **I am officially out-of-my-depth here**
