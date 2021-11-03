@@ -168,4 +168,13 @@ sqlmap -forms --crawl=2 -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/
 
 ### Password Guessing (/login.php)
 
-Tried password guessing against the **/login.php** screen using ???
+I tried password guessing against the **/login.php** screen with **THC Hyda**, using the **password.lst** that came with my version of _metasploit_ (`/usr/share/metasploit-framework/data/wordlists/password.lst`).
+
+Very quickly I bumped into a "successful" login attempt with the password of "0" for the "admin" user account. <br>
+This was because the **/login.php** page did not display the message "Invalid username or password" for this specific case. 
+To work around this, I made a copy of the original password file, took out the line with "0" and then used the modified password file `newpassword.lst` instead:
+
+```bash
+hydra -l admin -p ./newpassword.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
+```
+
