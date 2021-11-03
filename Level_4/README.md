@@ -178,29 +178,7 @@ To work around this, I made a copy of the original password file, took out the l
 hydra -l admin -P ./newpassword.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
 ```
 
-No password found with this password list. On a hunch, I decided to generate a custom password list comprising 10-character words from the letters "PALINDROME", with various combinations of different letter case, e.g. "Palindrome", "PALINDROME", "PalinDrome", and also trying the letters of the word "PALINDROME" in reverse.
-
-My `palindrome.lst` password file contained:
-
-```
-palindrome
-PALINDROME
-Palindrome
-PaLinDrome
-PalinDrome
-emordnilap
-EMORDNILAP
-emordnilaP
-emorDnilaP
-emorDniLaP
-```
-
-Running **hydra** with this `palindrome.lst` password file:
-
-```bash
-hydra -l admin -P ./palindrome.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
-```
-Still no luck.
+Still no luck. I tried a couple of other word lists but none had a matching password for the "admin" or "palindrome" usernames.
 
 I even wrote a Python script to generate a 1024-word list with the word "palindrome" spelled in various permutations of upper- and lowercase letters (e.g. "palindrome", "palindromE", "palindroMe", ..., "PALINDROme", "PALINDROmE", "PALINDROMe", "PALINDROME") and used that as a password list, against the user names "admin" and "palindrome", but still to no success.
 
