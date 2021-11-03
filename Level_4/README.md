@@ -51,7 +51,7 @@ There's a Base64-encoded portion, which I used [CyberChef](https://gchq.github.i
 
 ---
 
-Here is the prettified Javascript:
+Here is the prettified code:
 
 ```php
 $ch=curl_init();
