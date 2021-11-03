@@ -200,3 +200,4 @@ Running **hydra** with this `palindrome.lst` password file:
 ```bash
 hydra -l admin -P ./palindrome.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
 ```
+Still no luck.
