@@ -142,7 +142,7 @@ The timestamps under the "Last viewed by admin" column kept updating regularly w
 But the names of the 30 HTML files on the screen do not appear to change between page refreshes. <br>
 The names of the HTML files are clickable links but every link seemed to lead to a page that displayed the same content as every other link. <br>
 
-However, that content changes with time. Sometimes it was a series of the letter "a", sometimes it was a series of the characters "<3".
+However, that content changes with time. For example, sometimes it was a series of the letter "a", sometimes it was a series of the characters "<3".
 I don't think the content means anything, but may require further investigation later.
 
 
@@ -201,3 +201,9 @@ Running **hydra** with this `palindrome.lst` password file:
 hydra -l admin -P ./palindrome.lst -s 18926 188.166.189.68 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid username or password"
 ```
 Still no luck.
+
+I even wrote a Python script to generate a 1024-word list with the word "palindrome" spelled in various permutations of upper- and lowercase letters (e.g. "palindrome", "palindromE", "palindroMe", ..., "PALINDROme", "PALINDROmE", "PALINDROMe", "PALINDROME") and used that as a password list, against the user names "admin" and "palindrome", but still to no success.
+
+---
+
+😞 **Level 4 Challenge was not solved**
