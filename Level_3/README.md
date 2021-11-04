@@ -64,14 +64,20 @@ The file size of `hidden_exe` was 21460 bytes (which agreed with the _image size
 
 To recover the original content embedded in `1.bmp` I would need to read from `hidden_exe`, one "line" at a time (where each line is 148 bytes) but write out the "lines" of data in reverse order from when they were read.
 
----
+The following Python script will extract the bytes from `hidden_exe` and write them out in the correct sequence to `final_exe`:
 
+---python
+rows_of_data = []
+with open("hidden_exe", "rb") as file:
+        bytes_read = file.read(148) # Each row is 148 bytes
+        while bytes_read:
+                rows_of_data.append(bytes_read)
+                bytes_read = file.read(148)
 
-
-
-
-
-
+with open("final_exe", "wb") as output:
+        for i in range(len(rows_of_data)-1, 0, -1):
+                output.write(bytes(rows_of_data[i]))
+```
 
 
 
