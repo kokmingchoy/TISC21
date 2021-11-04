@@ -40,7 +40,7 @@ However, the content in there appeared to be out-of-sequence in many places. I t
 After much research into the PE format I was still getting stuck, until I switched focus to research into the BMP file format. 
 That was when I gained "enlightenment" :grin: 
 
-<br>
+<br><br>
 
 From the details the Wikipedia article - [BMP file format](https://en.wikipedia.org/wiki/BMP_file_format), this was the key piece of information:
 
