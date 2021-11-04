@@ -53,6 +53,18 @@ Now it made perfect sense why I was seeing out-of-sequence content and the secti
 
 ---
 
+From the output of `file 1.bmp`, we know that the actual "image" data in `1.bmp` starts at offset 1078, so first we extract that "image" data into a separate file `hidden_exe`:
+
+```bash
+dd if=1.bmp of=hidden_exe bs=1 skip=1078
+```
+
+The file size of `hidden_exe` was 21460 (again agreeing with the output from the `file 1.bmp` command). <br>
+21460 divided by 145 "pixels" (at 8 bits or 1 byte per pixel) across for each row of data in the image gives us 148 bytes per row. <br>
+
+To recover the original content embedded in `1.bmp` I would need to read from `hidden_exe`, one "line" at a time (where each line is 148 bytes), but I would need to write out the "lines" of data in reverse order from when they were read.
+
+---
 
 
 
