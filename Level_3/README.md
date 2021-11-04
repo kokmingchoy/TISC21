@@ -35,8 +35,20 @@ There were also indications that debugging information for the executable was al
 <br>
 However, the content in there appeared to be out-of-sequence in many places. I thought that might have been done intentionally to thwart the easy extraction of the hidden content, and that I might be forced to manually re-assemble the sections of the PE file in the correct sequence based on knowledge of the PE format.
 
-After much research into the PE format I was still getting stuck, until I switched focus to research into the BMP file format. <br>
-That was when I made the breakthrough, from the details in this Wikipedia article: [BMP file format](https://en.wikipedia.org/wiki/BMP_file_format).
+<br>
+
+After much research into the PE format I was still getting stuck, until I switched focus to research into the BMP file format. 
+That was when I gained "enlightenment" :grin: 
+
+<br>
+
+From the details the Wikipedia article - [BMP file format](https://en.wikipedia.org/wiki/BMP_file_format), this was the key piece of information:
+
+> ...pixels are stored "bottom-up", starting in the lower left corner, going from left to right, and then row by row from the bottom to the top of the image.
+
+Now it made perfect sense why I was seeing out-of-sequence content and the sections of the PE file appearing in reverse order.
+
+---
 
 
 
