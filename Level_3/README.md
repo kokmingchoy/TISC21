@@ -62,16 +62,16 @@ dd if=1.bmp of=hidden_exe bs=1 skip=1078
 The file size of `hidden_exe` was 21460 bytes (which agreed with the _image size_ indicated by the `file 1.bmp` command). <br>
 21460 divided by 145 "pixels" (at 8 bits or 1 byte per pixel) across for each row of data in the image gives us 148 bytes per row. <br>
 
-To recover the original content embedded in `1.bmp` I would need to read from `hidden_exe`, one "line" at a time (where each line is 148 bytes) but write out the "lines" of data in reverse order from when they were read.
+To recover the original content embedded in `1.bmp` I would need to read from `hidden_exe`, one "line" at a time (where each line is 148 bytes) but write out the "lines" of data in reverse order from when they were read. There are 3 bytes (148-145=3) of padding at the end of each "line" of data, which needs to be excluded  when writing the output.
 
 The following Python script will extract the bytes from `hidden_exe` and write them out in the correct sequence to `final_exe`:
 
 ```python
 rows_of_data = []
 with open("hidden_exe", "rb") as file:
-        bytes_read = file.read(148) # Each row is 148 bytes
+        bytes_read = file.read(148)
         while bytes_read:
-                rows_of_data.append(bytes_read)
+                rows_of_data.append(bytes_read[:-3])    # Drop the last 3 bytes of padding
                 bytes_read = file.read(148)
 
 with open("final_exe", "wb") as output:
