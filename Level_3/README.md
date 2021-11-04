@@ -38,6 +38,7 @@ However, the content in there appeared to be out-of-sequence in many places. I t
 <br>
 
 After much research into the PE format I was still getting stuck, until I switched focus to research into the BMP file format. 
+
 That was when I gained "enlightenment" :grin: 
 
 <br>
