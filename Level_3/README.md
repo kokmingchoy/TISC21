@@ -4,9 +4,9 @@
 
 <br>
 
-First, some basic info gathering with **file** and **binwalk** :
-
 ## 1.bmp
+
+First, some basic information gathering using **file** and **binwalk**:
 
 ```bash
 1.bmp: PC bitmap, Windows 3.x format, 145 x 145 x 8, image size 21460, resolution 3780 x 3780 px/m, 256 important colors, cbSize 22538, bits offset 1078
@@ -18,6 +18,36 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 2020          0x7E4           XML document, version: "1.0"
 
 ```
+
+Displaying `1.bmp` to screen using an image viewer just showed garbled pixels. <br>
+Inspecting with **Ghex** revealed that there were what appeared to be portions of an executable file (i.e. Windows Portable Executable or PE format) embedded in the `1.bmp`, for example:
+
+![image](https://user-images.githubusercontent.com/82754379/140280315-d3061160-6429-4846-a996-acb8cb97d02c.png)
+
+<br>
+
+There were also indications that debugging information for the executable was also embedded in `1.bmp` :
+
+![image](https://user-images.githubusercontent.com/82754379/140280634-05ca111b-a9f2-4cb3-befe-ee970fd6120c.png)
+
+![image](https://user-images.githubusercontent.com/82754379/140280870-c1fe7846-2866-4539-8c4b-938d26a309ec.png)
+
+<br>
+However, the content in there appeared to be out-of-sequence in many places. I thought that might have been done intentionally to thwart the easy extraction of the hidden content, and that I might be forced to manually re-assemble the sections of the PE file in the correct sequence based on knowledge of the PE format.
+
+After much research into the PE format I was still getting stuck, until I switched focus to research into the BMP file format. <br>
+That was when I made the breakthrough, from the details in this Wikipedia article: [BMP file format](https://en.wikipedia.org/wiki/BMP_file_format).
+
+
+
+
+
+
+
+
+
+
+
 
 ## 2.bmp
 
