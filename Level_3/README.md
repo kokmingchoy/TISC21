@@ -66,7 +66,7 @@ To recover the original content embedded in `1.bmp` I would need to read from `h
 
 The following Python script will extract the bytes from `hidden_exe` and write them out in the correct sequence to `final_exe`:
 
----python
+```python
 rows_of_data = []
 with open("hidden_exe", "rb") as file:
         bytes_read = file.read(148) # Each row is 148 bytes
