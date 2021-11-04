@@ -102,7 +102,9 @@ I used the same approach as I did with `1.bmp` to extract the embedded content i
 ```bash
 dd if=2.bmp of=hidden_words bs=1 skip=1078
 ```
+
 <br>
+
 `2.bmp` has different dimensions (99 x 99) so the Python code to extract the hidden content needed to be adjusted accordingly, in order to obtain the `final_words` file (9801 bytes):
 
 ```python
