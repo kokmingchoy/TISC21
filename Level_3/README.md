@@ -79,9 +79,13 @@ with open("final_exe", "wb") as output:
 ```
 
 
+<br>
 
+---
 
 ## 2.bmp
+
+Basic information-gathering for `2.bmp` with **binwalk** and **file**:
 
 ```bash
 2.bmp: PC bitmap, Windows 3.x format, 99 x 99 x 8, image size 9900, resolution 3780 x 3780 px/m, 256 important colors, cbSize 10978, bits offset 1078
@@ -90,6 +94,27 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 0             0x0             PC bitmap, Windows 3.x format,, 99 x 99 x 8
 
+```
+
+Inspecting with **Ghex** revealed that there were English words embedded in the `2.bmp` file.
+I used the same approach as I did with `1.bmp` to extract the embedded content into a separate file `hidden_words` (9900 bytes):
+
+```bash
+dd if=2.bmp of=hidden_words bs=1 skip=1078
+```
+<br>
+`2.bmp` has different dimensions (99 x 99) so the Python code to extract the hidden content needed to be adjusted accordingly, in order to obtain the `final_words` file (9801 bytes):
+
+```python
+rows_of_data = []
+with open("hidden_words", "rb") as file:
+    for i in range(99):        # There are 99 rows of data expected
+        bytes_read = file.read(100)     # Reading 100 bytes per row, which includes padding
+        rows_of_data.append(bytes_read[:-1])  # Drop the last 1 byte of padding
+
+with open("final_words", "wb") as output:
+    for i in range(len(rows_of_data)-1, -1, -1):    # Write rows in reverse order from when they were read in
+        output.write(bytes(rows_of_data[i]))
 ```
 
 ---
