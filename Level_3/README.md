@@ -78,8 +78,18 @@ with open("final_exe", "wb") as output:
         output.write(bytes(rows_of_data[i]))
 ```
 
-
 <br>
+
+---
+
+I moved `final_exe` over to a Windows machine and renamed the file to `a.exe` (since that was the original name of the compiled executable, as the text `a.pdb` was seen in the executable).
+
+I started analyzing `a.exe` in **Ghidra** :
+
+![image](https://user-images.githubusercontent.com/82754379/140459420-c735250c-f9fb-435b-875a-8b5cb5e619a4.png)
+
+
+<br><br>
 
 ---
 
