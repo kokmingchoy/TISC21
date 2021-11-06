@@ -88,6 +88,13 @@ I loaded `a.exe` into **Ghidra** for analysis:
 
 ![image](https://user-images.githubusercontent.com/82754379/140459420-c735250c-f9fb-435b-875a-8b5cb5e619a4.png)
 
+When run without command line parameters, the unknown program `a.exe` simply printed out:
+
+[image](https://user-images.githubusercontent.com/82754379/140600711-37c97814-611d-4d09-b046-b093f099f857.png)
+
+I managed to find the specific function which output that text.
+
+
 
 <br><br>
 
