@@ -88,19 +88,22 @@ I loaded `a.exe` into **Ghidra** for analysis:
 
 ![image](https://user-images.githubusercontent.com/82754379/140459420-c735250c-f9fb-435b-875a-8b5cb5e619a4.png)
 
-When run without command line parameters, the unknown program `a.exe` simply printed out:
-
-![image](https://user-images.githubusercontent.com/82754379/140600711-37c97814-611d-4d09-b046-b093f099f857.png)
-
-I managed to find the specific function which output that text. Following the code in the decompiler in **Ghidra**, I managed to deduce the following:
+I made the following observations, following the code in the decompiler in **Ghidra** and through some trial-and-error running `a.exe` on the commandline:
 
 - the program `a.exe` will attempt to process (i.e. open for reading in binary mode) a filename given as the first argument on the commandline
 - the filename to be processed had to have a ".txt" extension
-- the length of the name of the file to be processed alters the behaviour of the program
+
+When run without command line parameters or with a file that does not have the ".txt" extension, `a.exe` simply printed out:
+
+![not_a_flag](https://user-images.githubusercontent.com/82754379/140600711-37c97814-611d-4d09-b046-b093f099f857.png)
 
 <br>
 
-With a bit of trial-and-error, I found that by renaming the file `final_words` (see next section on extracting the hidden content from `2.bmp`) to `2.txt` and running `a.exe 2.txt`, I got the following output:
+When run with any filename with ".txt" extension (whether it was an actual text file or not), `a.exe` only printed out:
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/82754379/140601020-3892343b-fd1c-458f-904d-8d604bad40b1.png)
 
