@@ -105,7 +105,7 @@ When run with a non-existent filename with ".txt" extension, I got error message
 
 <br>
 
-But most interestingly, if I were to take the hidden content extracted from `2.bmp` (see next section) and named it to, say, `2.txt, running `a.exe 2.txt` gave the following output:
+But most interestingly, if I were to take the hidden content extracted from `2.bmp` (see next section) and named it to, say, `2.txt`, running `a.exe 2.txt` gave the following output:
 
 ![image](https://user-images.githubusercontent.com/82754379/140601020-3892343b-fd1c-458f-904d-8d604bad40b1.png)
 
