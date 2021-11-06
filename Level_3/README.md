@@ -94,7 +94,7 @@ When run without command line parameters, the unknown program `a.exe` simply pri
 
 I managed to find the specific function which output that text. Following the code in the decompiler in **Ghidra**, I managed to deduce the following:
 
-- the program will attempt to process (i.e. open for reading in binary mode) a filename given as the first argument on the commandline
+- the program `a.exe` will attempt to process (i.e. open for reading in binary mode) a filename given as the first argument on the commandline
 - the filename to be processed had to have a ".txt" extension
 - the length of the name of the file to be processed alters the behaviour of the program
 
