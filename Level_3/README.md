@@ -99,19 +99,17 @@ When run without command line parameters or with a file that does not have the "
 
 <br>
 
-When run with any filename with ".txt" extension (whether it was an actual text file or not), `a.exe` only printed out:
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/82754379/140601020-3892343b-fd1c-458f-904d-8d604bad40b1.png)
-
-If I tried using a filename (of extension ".txt") with the "wrong" length, I got a different output:
+When run with a non-existent filename with ".txt" extension, I got error messages:
 
 ![image](https://user-images.githubusercontent.com/82754379/140601083-ea2aac6b-20ed-4b98-85f3-7a866ca46125.png)
 
+<br>
 
+But most interestingly, if I were to take the hidden content extracted from `2.bmp` (see next section) and named it to, say, `2.txt, running `a.exe 2.txt` gave the following output:
+
+![image](https://user-images.githubusercontent.com/82754379/140601020-3892343b-fd1c-458f-904d-8d604bad40b1.png)
+
+It would seem that the code in `a.exe` is extracting specific content from `2.txt` based on some algorithm, which I suspected was related to the supplied filename.
 
 <br><br>
 
