@@ -109,9 +109,14 @@ But most interestingly, if I were to take the hidden content extracted from `2.b
 
 ![image](https://user-images.githubusercontent.com/82754379/140601020-3892343b-fd1c-458f-904d-8d604bad40b1.png)
 
-It appears that code in `a.exe` was extracting specific content from `2.txt` based on some algorithm, which I suspected was related to the supplied filename.
+It appears that code in `a.exe` was extracting specific content from `2.txt` based on some algorithm.
 
 <br><br>
+
+
+
+
+
 
 ---
 
