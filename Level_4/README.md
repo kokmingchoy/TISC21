@@ -78,9 +78,9 @@ curl -d "14c4b06b824ec593239362517f538b29=Hi%20from%20scada" http://s0pq6slfaunw
 ```
 
 and got the one-line output:
-```
-New record created successfully
-```
+
+![image](https://user-images.githubusercontent.com/82754379/140694332-73c6ed20-501e-407f-b8fe-513d4ca10ec2.png)
+
 
 It appeared that this PHP file was interacting with a database. Perhaps I could find and exploit a vulnerability in this PHP file that would allow me to extract data from the database.
 
@@ -138,14 +138,11 @@ It appeared I have found:
 
 ![image](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
 
-The timestamps under the "Last viewed by admin" column kept updating regularly when the page is refreshed. <br>
-But the names of the 30 HTML files on the screen do not appear to change between page refreshes. <br>
-The names of the HTML files are clickable links but every link seemed to lead to a page that displayed the same content as every other link. <br>
+<br>
 
-However, that content changes with time. For example, sometimes it was a series of the letter "a", sometimes it was a series of the characters "<3".
-I don't think the content means anything, but may require further investigation later.
+The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation).
 
-
+This may be an opportunity for some Cross Site Scripting exploitation.
 
 ---
 
