@@ -45,9 +45,9 @@ I downloaded the _favicon.ico_ file from http://wp6p6avs8yncf6wuvdwnpq8lfdhyjjds
 
 ![image](https://user-images.githubusercontent.com/82754379/139862931-6d0d6e38-167a-4396-aff5-33f38a0bad54.png)
 
-There's a Base64-encoded portion, which I used [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=SkdOb1BXTjFjbXhmYVc1cGRDZ3BPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxVlNUQ3dpYUhSMGNEb3ZMM013Y0hFMmMyeG1ZWFZ1ZDJKMGJYbHpaell5ZVhwdGIyUmtZWGMzY0hCcUxtTjBaaTV6WnpveE9Ea3lOaTk0WTNac2IzTjRaMkowWm1OdlptOTJlWGRpZUdSaGQzSmxaMnBpZW5GMFlTNXdhSEFpS1R0amRYSnNYM05sZEc5d2RDZ2tZMmdzUTFWU1RFOVFWRjlRVDFOVUxERXBPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxQlBVMVJHU1VWTVJGTXNJakUwWXpSaU1EWmlPREkwWldNMU9UTXlNemt6TmpJMU1UZG1OVE00WWpJNVBVaHBKVEl3Wm5KdmJTVXlNSE5qWVdSaElpazdKSE5sY25abGNsOXZkWFJ3ZFhROVkzVnliRjlsZUdWaktDUmphQ2s3) to decode:
+There was a Base64-encoded portion, which I used [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=SkdOb1BXTjFjbXhmYVc1cGRDZ3BPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxVlNUQ3dpYUhSMGNEb3ZMM013Y0hFMmMyeG1ZWFZ1ZDJKMGJYbHpaell5ZVhwdGIyUmtZWGMzY0hCcUxtTjBaaTV6WnpveE9Ea3lOaTk0WTNac2IzTjRaMkowWm1OdlptOTJlWGRpZUdSaGQzSmxaMnBpZW5GMFlTNXdhSEFpS1R0amRYSnNYM05sZEc5d2RDZ2tZMmdzUTFWU1RFOVFWRjlRVDFOVUxERXBPMk4xY214ZmMyVjBiM0IwS0NSamFDeERWVkpNVDFCVVgxQlBVMVJHU1VWTVJGTXNJakUwWXpSaU1EWmlPREkwWldNMU9UTXlNemt6TmpJMU1UZG1OVE00WWpJNVBVaHBKVEl3Wm5KdmJTVXlNSE5qWVdSaElpazdKSE5sY25abGNsOXZkWFJ3ZFhROVkzVnliRjlsZUdWaktDUmphQ2s3) to decode:
 
-![Screenshot from 2021-11-02 22-11-49](https://user-images.githubusercontent.com/82754379/139863889-85bcb128-5de8-43d3-94a9-221995914161.png)
+![image](https://user-images.githubusercontent.com/82754379/139863889-85bcb128-5de8-43d3-94a9-221995914161.png)
 
 ---
 
@@ -110,13 +110,13 @@ sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
 ---
 
 When running **curl** with the **-v** switch it was determined that the target was running **Apache 2.4.25** and **PHP 7.2.2** <br>
-Perhaps there could be some exploits that can be executed against these versions of Apache and/or PHP? <br>
+Perhaps there were some exploits that may be executed against these versions of Apache and/or PHP? <br>
 
 ---
 
 I tried running **dirbuster** against `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/` and hit on on something!
 
-![Screenshot from 2021-11-03 01-17-49](https://user-images.githubusercontent.com/82754379/139913891-2b130c26-e955-48b7-8018-04288126d2f5.png)
+![image](https://user-images.githubusercontent.com/82754379/139913891-2b130c26-e955-48b7-8018-04288126d2f5.png)
 
 <br>
 
@@ -129,14 +129,14 @@ It appeared I have found:
 
 ## Welcome screen (/index.php)
 
-![Screenshot from 2021-11-03 01-24-25](https://user-images.githubusercontent.com/82754379/139914881-5be91368-d608-46a4-a489-7a4c7053d727.png)
+![image](https://user-images.githubusercontent.com/82754379/139914881-5be91368-d608-46a4-a489-7a4c7053d727.png)
 
 
 ---
 
 ## Data screen (/data.php)
 
-![Screenshot from 2021-11-03 01-27-17](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
+![image](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
 
 The timestamps under the "Last viewed by admin" column kept updating regularly when the page is refreshed. <br>
 But the names of the 30 HTML files on the screen do not appear to change between page refreshes. <br>
@@ -151,7 +151,7 @@ I don't think the content means anything, but may require further investigation 
 
 ## Login screen (/login.php)
 
-![Screenshot from 2021-11-03 01-30-20](https://user-images.githubusercontent.com/82754379/139915914-b08c8a28-7ce0-403c-957e-fa7be8000505.png)
+![image](https://user-images.githubusercontent.com/82754379/139915914-b08c8a28-7ce0-403c-957e-fa7be8000505.png)
 
 ---
 
