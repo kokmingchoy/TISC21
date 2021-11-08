@@ -81,36 +81,11 @@ and got the one-line output:
 
 ![image](https://user-images.githubusercontent.com/82754379/140694332-73c6ed20-501e-407f-b8fe-513d4ca10ec2.png)
 
+<br>
 
-It appeared that this PHP file was interacting with a database. Perhaps I could find and exploit a vulnerability in this PHP file that would allow me to extract data from the database.
+So, a POST operation to the URL endpoint `xcvlosxgbtfcofovywbxdawregjbzqta.php` would allow me to add a record to the backend database! <br>
+More importantly, we can access `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxxxxxxxxxx.html` to get the browser to display what had been added. This could be an opportunity for some Cross Site Scripting exploit.
 
-First, I created a file `post.txt` which contained the bytes that would have been sent by a HTTP client for the POST request:
-
-```
-POST /xcvlosxgbtfcofovywbxdawregjbzqta.php HTTP/1.1
-Host: s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926
-User-Agent: curl/7.68.0
-Accept: */*
-Content-Length: 50
-Content-Type: application/x-www-form-urlencoded
-
-14c4b06b824ec593239362517f538b29=Hi%20from%20scada
-```
-
-The above file content was mostly derived from output from the **curl** command (with the **-v** for "verbose" switch) used to post the data to the target URL, except for the last line (the POST data) which I added manually.
-
-Next, I ran **sqlmap** to try different data to inject into the _14c4b06b824ec593239362517f538b29_ parameter as it makes the POST request to the target URL:
-
-```bash
-sqlmap -r post.txt -p 14c4b06b824ec593239362517f538b29
-```
-
-**sqlmap** reported that the parameter _14c4b06b824ec593239362517f538b29_ "does not seem to be injectable" and suggested I increased the "--level" or "--risk" options if I wished to perform more tests. I did retry with "--level 5" but still **sqlmap** did not manage to perform any SQL injection successfully.
-
----
-
-When running **curl** with the **-v** switch it was determined that the target was running **Apache 2.4.25** and **PHP 7.2.2** <br>
-Perhaps there were some exploits that may be executed against these versions of Apache and/or PHP? <br>
 
 ---
 
@@ -142,7 +117,10 @@ It appeared I have found:
 
 The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation).
 
-This may be an opportunity for some Cross Site Scripting exploitation.
+This may be an opportunity for some Cross Site Scripting exploitation. <br>
+
+On this `/data.php` screen, it mentioned that uploaded records were "Last viewed by admin". This suggested that there was some mechanism at play here to simulate that a user with admin rights was opening up the records under `../data/..`. A properly crafted record may be able to exploit the XSS vulnerability to return some useful information to me.
+
 
 ---
 
