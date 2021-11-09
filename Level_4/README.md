@@ -196,19 +196,19 @@ curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfa
 - When the _filter_ value was invalid, the words "0 results" appeared in the output.
 - Many special characters (including the space character) were stripped from the input _filter_ values. This has implications for an attempt to perform SQL injection as I could not use the characters `--` or `+` in place of a space, even if they were URL-encoded.
   
-This may mean that the alternative is guessing a valid _filter_ value that should give us the desired output (i.e. the row of data with the encryption key in the KEY column of the output table).
+At this time I had to consider that the alternative was guessing a valid _filter_ value that should give me the desired output (i.e. the row of data with the encryption key in the KEY column of the output table).
 
 Making some assumptions:
 
 - the value for _filter_ always starts with the prefix "is" (as in "isALIVE", "isDEAD")
-- the characters after the "is" prefix is only the letters A through Z
+- the characters after the "is" prefix were only the letters A through Z (no digits)
 - the characters after the "is" prefix make up a valid English word
 
-Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,600 words long. Hopefully it had the value that would get us the desired results.
+Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,600 words long. 
 
 
 
-
+<br><br>
 
 
 
