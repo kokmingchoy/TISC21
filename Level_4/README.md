@@ -115,7 +115,11 @@ It appeared I have found additional pages at `http://s0pq6slfaunwbtmysg62yzmodda
 
 <br>
 
-The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation).
+The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation):
+
+![image](https://user-images.githubusercontent.com/82754379/140931734-7db1368e-1aec-475e-a1cf-7f3e741d7ad6.png)
+
+---
 
 On this `/data.php` screen, it mentioned that uploaded records were "Last viewed by admin". This suggested that there was some mechanism at play here to simulate that a user with admin rights was opening up the records under `../data/..`. A properly crafted record may be able to exploit the XSS vulnerability to return some useful information to me.
 
