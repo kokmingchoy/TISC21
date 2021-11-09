@@ -206,14 +206,21 @@ Making some assumptions:
 
 Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,600 words long. 
 
+Using the word list in `words.lst` I used **THC Hydra** to try different values for the _filter_ parameter in the hope of guessing a valid value.
+A valid session cookie must be included in the final **hydra** command, like so:
+
+```bash
+hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_admin.php:filter=is^PASS^:0 results:H=Cookie\: PHPSESSID=__session_cookie__"
+```
+
+<br>
+> NOTE: I had to supply an arbitrary username of "admin" because **hydra** requires a username, but this value of "admin" is not used.
+> NOTE: I had to take out the words "alive" and "dead" from the word list or **hydra** would detect those as valid _filter_ values
 
 
 <br><br>
-
-
-
-
-
+<br><br>
+<br><br>
 
 
 
