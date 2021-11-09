@@ -194,7 +194,9 @@ curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfa
 - The filter value was case-insensitive. A _filter_ value of "isDEAD" returned the same output as a value of "isdead".
 - When the _filter_ value was valid, some interesting output was in a HTML table
 - When the _filter_ value was invalid, the words "0 results" appeared in the output.
+- Many special characters (including the space character) were stripped from the input _filter_ values. This has implications for an attempt to perform SQL injection as I could not use the characters `--` or `+` in place of a space, even if they were URL-encoded.
   
+This may mean that the alternative is guessing a valid _filter_ value that should give us the desired output (i.e. the row of data with the encryption key in the KEY column of the output table).
 
 Making some assumptions:
 
