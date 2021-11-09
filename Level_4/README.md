@@ -118,7 +118,7 @@ It appeared I have found additional pages at `http://s0pq6slfaunwbtmysg62yzmodda
 The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation).
 For example:
 
-![image](https://user-images.githubusercontent.com/82754379/140932041-83880b92-528b-453f-911f-208256329cc4.png)
+![image](https://user-images.githubusercontent.com/82754379/140932302-e2ef607a-bbcc-446a-973f-6934616a42d6.png)
 
 ---
 
