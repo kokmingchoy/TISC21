@@ -199,11 +199,22 @@ Making some assumptions:
 - the characters after the "is" prefix is only the letters A through Z
 - the characters after the "is" prefix make up a valid English word
 
-Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,000 words long. Hopefully it has the value that would get us the desired results.
+Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,600 words long. Hopefully it had the value that would get us the desired results.
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+---
 
 ## Login screen (/login.php)
 
