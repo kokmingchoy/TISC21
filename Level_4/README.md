@@ -159,6 +159,22 @@ curl -d "14c4b06b824ec593239362517f538b29=%3Cscript%3Edocument%2Ewrite%28%27%3Ci
 
 Within a minute of making the POST, I got the following traffic captured on my Netcat listener:
 
+![image](https://user-images.githubusercontent.com/82754379/140933001-58f7f8d5-b492-45be-9a98-d225dd5de06b.png)
+
+<br>
+
+Success! Now I had the session cookie and could take over the admin account's session.
+To do so, I went into Developer mode (F12) on my Google Chrome browser and modified the session cookie value under **Application => Storage => Cookies** :
+
+![image](https://user-images.githubusercontent.com/82754379/140935009-a73be7ba-b0d9-44f2-abf0-141bf6c89db5.png)
+
+<br>
+
+Then I accessed the **/login.php** page and got redirected to a **/landing_admin.php** page, which had a form with 2 filter options:
+
+![image](https://user-images.githubusercontent.com/82754379/140935432-bdb95d58-2370-47c0-b994-c14098c32b44.png)
+
+
 
 
 
