@@ -172,15 +172,17 @@ To do so, I went into Developer mode (F12) on my Google Chrome browser and modif
 
 Then I accessed the **/login.php** page and got redirected to a **/landing_admin.php** page, which had a form with 2 filter options:
 
+---
+
 ![image](https://user-images.githubusercontent.com/82754379/140935432-bdb95d58-2370-47c0-b994-c14098c32b44.png)
 
+---
 
-
-
-
-
+![image](https://user-images.githubusercontent.com/82754379/140936007-8f16e07f-6e50-403a-bab3-5761f3f53823.png)
 
 ---
+
+
 
 ## Login screen (/login.php)
 
