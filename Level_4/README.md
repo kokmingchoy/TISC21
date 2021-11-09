@@ -214,6 +214,7 @@ hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_adm
 ```
 
 <br>
+
 > NOTE: I had to supply an arbitrary username of "admin" because **hydra** requires a username, but this value of "admin" is not used.
 > NOTE: I had to take out the words "alive" and "dead" from the word list or **hydra** would detect those as valid _filter_ values
 
