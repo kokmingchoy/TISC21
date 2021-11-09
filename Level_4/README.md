@@ -124,8 +124,6 @@ For example:
 
 On this `/data.php` screen, it mentioned that uploaded records were "Last viewed by admin". This suggested that there was some mechanism at play here to simulate that a user with admin rights was opening up the records under `../data/..`. A properly crafted record may be able to exploit the XSS vulnerability to return some useful information to me.
 
-This may be an opportunity for some Cross Site Scripting (XSS) exploitation. <br>
-
 After some testing I found that there was indeed an XSS vulnerability in that I could get the attacker "admin" to view the contents of my POST operation and connect back to my own home PC where I was waiting with a Netcat listener, when I used the following XSS payloads (pre-URL encoding):
 
 ```html
