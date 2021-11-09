@@ -182,6 +182,27 @@ Then I accessed the **/login.php** page and got redirected to a **/landing_admin
 
 ---
 
+By trial-and-error with **curl** to make a POST with varying values for the _filter_ form parameter, like so:
+
+```bash
+curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/landing_admin.php
+```
+
+... I eventually determined 2 important pieces of information:
+
+- "Filter can only be 7 characters long." - this was the message I got in an HTML response when I tried values longer than 7 characters.
+- The filter value is case-insensitive.
+
+Making some assumptions:
+
+- the value for _filter_ always starts with the prefix "is" (as in "isALIVE", "isDEAD")
+- the characters after the "is" prefix is only the letters A through Z
+- the characters after the "is" prefix make up a valid English word
+
+Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,000 words long. Hopefully it has the value that would get us the desired results.
+
+
+
 
 
 ## Login screen (/login.php)
