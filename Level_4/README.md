@@ -130,6 +130,8 @@ After some testing I found that there was indeed an XSS vulnerability in that I 
 <img src="http://<my_home_pc_IP_address>/image.gif"> 
 ```
 
+<br>
+
 > NOTE: In order to wait for the incoming connection from the "attacker admin" account's browser session, I had to prepare the following:
 > - Set up port forwarding on my home router so that incoming connections from the Internet to port 80 are forwarded to an arbitrary port 9876 on my home PC
 > - Set up a Netcat listener on my home PC listening to port 9876 and sending whatever captured traffic to a file
