@@ -188,10 +188,13 @@ By trial-and-error with **curl** to make a POST with varying values for the _fil
 curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/landing_admin.php
 ```
 
-... I eventually determined 2 important pieces of information:
+... and I made some important observations:
 
 - "Filter can only be 7 characters long." - this was the message I got in an HTML response when I tried values longer than 7 characters.
-- The filter value is case-insensitive.
+- The filter value was case-insensitive. A _filter_ value of "isDEAD" returned the same output as a value of "isdead".
+- When the _filter_ value was valid, some interesting output was in a HTML table
+- When the _filter_ value was invalid, the words "0 results" appeared in the output.
+  
 
 Making some assumptions:
 
