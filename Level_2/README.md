@@ -11,7 +11,7 @@ Viewing the provided `traffic.pcap` file in **Wireshark**, I noted that it conta
 The interesting part of the query name was the varying 9-character portion after "d33d".
 I collected those characters into a single file with the following procedures:
 
-First, use **tshark** to pipe the data from `traffic.pcap` through **sed** to extract the interesting 9-character string from each of the DNS packets:
+First, I used **tshark** to pipe the data from `traffic.pcap` through **sed** to extract the interesting 9-character string from each of the DNS packets:
 ```bash
 tshark -r traffic.pcap | sed -n -r 's/.*?d33d(.*?)\.tentopspot.*/\1/p' >> dns.txt
 ```
