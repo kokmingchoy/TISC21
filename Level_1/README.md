@@ -126,7 +126,7 @@ ANSWER TO THIS CHALLENGE IS HERE APPLECARROTPEAR
 
 ![image](https://user-images.githubusercontent.com/82754379/139614542-dd1d1ad5-d4e1-43f4-a035-e0dfab6551d3.png)
 
-This and subsequent challenges in Level 1 are related to the Windows 10 virtual machine provided.<br>
+This and subsequent challenges in Level 1 were related to the Windows 10 virtual machine provided.<br>
 
 Running `whoami` from the command prompt shows:
 ```
@@ -143,8 +143,8 @@ desktop-8u7f1gr\adam
 ![image](https://user-images.githubusercontent.com/82754379/139614611-6975e690-faca-4fd1-b451-0361ab49b5d7.png)
 
 Starting up the Event Viewer (**eventvwr.msc**) to inspect the **Security** logs for previous logon events.<br>
-We are looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.<br>
-We find such an event (Event ID 4624) at the following timestamp:
+I was looking for the most recent logon by user account "DESKTOP-8U7F1GR\adam" before today.<br>
+I found such an event (Event ID 4624) at the following timestamp:
 ```
  Logged: 17/6/2021 10:41:37 am
 ```
@@ -152,7 +152,7 @@ We find such an event (Event ID 4624) at the following timestamp:
 ![image](https://user-images.githubusercontent.com/82754379/139615104-fb46c75b-d525-42bd-9917-364d04cffaf2.png)
 
 
-Assuming this is Singapore local time (UTC+8), converting to UTC we get
+Assuming this was Singapore local time (UTC+8), converting to UTC I got:
 ```
 17/06/2021 02:41:37
 ```
@@ -167,18 +167,18 @@ Assuming this is Singapore local time (UTC+8), converting to UTC we get
 ![image](https://user-images.githubusercontent.com/82754379/139615174-4b660bf5-9e4e-41fe-b9d9-a6683be762dc.png)
 
 
-There appears to be something in the Recycle Bin. Opening up the Recycle Bin reveals a deleted file `sentosa-sea-aquarium.7z`, which should be the file of interest.
+There appeared to be something in the Recycle Bin. Opening up the Recycle Bin revealed a deleted file `sentosa-sea-aquarium.7z`, which should be the file of interest.
 
-First we restore the file from the Recycle Bin (clicking on the "Restore" option on the context menu).
-The file gets restored to the Desktop.
-The Windows 10 virtual machine does not have 7zip or some other software that can work to decompress the contents of this 7z file, so I shall move this restored 7z archive off of the virtual machine and onto my host machine where I have more tools at my disposal.
+First I restored the file from the Recycle Bin (clicking on the "Restore" option on the context menu).
+The file got restored to the Desktop.
+The Windows 10 virtual machine did not have 7zip or some other software that could decompress the contents of this 7z file, so I moved the restored 7z archive off of the virtual machine and onto my host machine where I had more tools at my disposal.
 
-On my host machine (a Linux box) I run `file sentosa-sea-aquarium.7z` to confirm the contents of the file:
+On my host machine (a Linux box) I ran `file sentosa-sea-aquarium.7z` to confirm the the file was a 7-zip archive:
 ```
 sentosa-sea-aquarium.7z: 7-zip archive data, version 0.4
 ```
 
-List the files in the 7z file using `7z l sentosa-sea-aquarium.7z`:
+Here was the list of files in the 7z file using `7z l sentosa-sea-aquarium.7z`:
 ```
    Date      Time    Attr         Size   Compressed  Name
 ------------------- ----- ------------ ------------  ------------------------
@@ -194,7 +194,7 @@ Extracting with the option to calculate the CRC32 hash:
 7z e -scrcCRC32 sentosa-sea-aquarium.7z
 ```
 
-On the last line of the output on the screen, the CRC32 hash is given:
+On the last line of the output on the screen, the CRC32 hash was given:
 ```
 CRC32  for data:              040E23DA
 ```
@@ -208,7 +208,7 @@ CRC32  for data:              040E23DA
 
 ![image](https://user-images.githubusercontent.com/82754379/139615309-73fea1f0-6c61-4e13-bde7-1cded6cb5c8c.png)
 
-From the command prompt, running `wmic useraccount get name,sid` gives us the necessary information:
+From the command prompt, running `wmic useraccount get name,sid` gave the necessary information:
 ```
 Name                SID
 adam                S-1-5-21-271853984-2378250948-965456637-1002
@@ -218,9 +218,9 @@ Guest               S-1-5-21-271853984-2378250948-965456637-501
 WDAGUtilityAccount  S-1-5-21-271853984-2378250948-965456637-504
 ```
 
-We have only 1 user (adam) with RID of above 1000 (1002).<br>
-We have the user *Guest* with RID of 501.<br>
-We have the user *DefaultAccount* with RID of 503.
+There was only 1 user (adam) with RID of above 1000 (1002).<br>
+There was the user *Guest* with RID of 501.<br>
+There was the user *DefaultAccount* with RID of 503.
 
 :triangular_flag_on_post: **Level 1 Challenge 7 flag: `TISC{1-Guest-DefaultAccount}`**
 
@@ -231,18 +231,18 @@ We have the user *DefaultAccount* with RID of 503.
 
 ![image](https://user-images.githubusercontent.com/82754379/139615369-a9074dcb-887a-46e8-b032-8632b16d47b0.png)
 
-For this challenge we need to inspect the *History* file of Microsoft Edge, which I found at:
+For this challenge I needed to inspect the *History* file of Microsoft Edge, which I found at:
 ```
 C:\Users\adam\AppData\Local\Microsoft\Edge\User Data\Default\History
 ```
 
-As this is an SQLite database file, I transfered the *History* file over to my host machine and from there, uploaded the file to the online [SQLite Viewer]( https://inloop.github.io/sqlite-viewer/).
+As this was an SQLite database file, I transfered the *History* file over to my host machine and from there, uploaded the file to the online [SQLite Viewer]( https://inloop.github.io/sqlite-viewer/).
 
-The *urls* table in the database shows the visited URLs and also the *visit_count* for each visited URL.
+The *urls* table in the database showed the visited URLs and also the *visit_count* for each visited URL.
 
 ![image](https://user-images.githubusercontent.com/82754379/139615493-9439ea35-3222-42d0-b8a0-2204e6d3bfdd.png)
 
-I see 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits to either `https://www.facebook.com` or `https://www.live.com`.
+I saw 2 visits to `https://www.csit.gov.sg/about-csit/who-we-are` but no visits to either `https://www.facebook.com` or `https://www.live.com`.
 
 :triangular_flag_on_post: **Level 1 Challenge 8 flag: `TISC{2-0-0}`**
 
