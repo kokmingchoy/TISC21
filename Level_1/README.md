@@ -104,7 +104,7 @@ These bytes were:
 NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRNE
 ```
 
-![image](https://user-images.githubusercontent.com/82754379/139616697-35f48a1a-283e-47eb-999c-9578f7af9003.png)
+![image](https://user-images.githubusercontent.com/82754379/141345980-cc43a387-580c-4c0d-ad8c-96eff1727a41.png)
 
 
 The text looked like it could have been encoded with some simple substition ciper.
