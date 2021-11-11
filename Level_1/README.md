@@ -104,6 +104,10 @@ These bytes were:
 NAFJRE GB GUVF PUNYYRATR VF URER NCCYRPNEEBGCRNE
 ```
 
+![image](https://user-images.githubusercontent.com/82754379/141346481-bd45f84b-0583-438a-9f55-79b3b2d152f5.png)
+
+<br>
+
 The text looked like it could have been encoded with some simple substition ciper.
 Trying **ROT13** cipher in [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)&input=TkFGSlJFIEdCIEdVVkYgUFVOWVlSQVRSIFZGIFVSRVIgTkNDWVJQTkVFQkdDUk5FCg) produced the clear text:
 ```
