@@ -27,7 +27,7 @@ Now I had `dns2.txt` which looked something like the following:
 201MJVHE6U01CRKJJVI09VKWK5MF01SWRQGEZ01DGNBVGY013TQOLBM01JRWIZLG09M5UGS2T17LNRWW
 43043QOFZHG205DVOZ3X16Q6L2FMX33SA3LBMV23RWK3TBO04MQHM33M29OV2HAYL17UEBRW6305TENF
 WWK013TUOVWS01AZLHMVZ11XIYLTFY33QHAZLMN07RSW45DF01ONYXKZJ01AOZUXIY01LFEBYG6204TU
-(truncated for brevity)
+(truncated for brevity) 
 ```
 
 I investigated the contents of `dns2.txt` using [CyberChef](https://gchq.github.io/CyberChef/) in an attempt to figure out what kind of encoding it may be in, but did not have any conclusive results initially.
