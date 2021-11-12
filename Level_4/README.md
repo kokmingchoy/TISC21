@@ -215,8 +215,15 @@ hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_adm
 ```
 
 > NOTE: The ip address 178.128.218.40 corresponded to that for the domain `s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg`
+
 > NOTE: I had to supply an arbitrary username of "admin" because **hydra** required a username, but this value of "admin" is not used.
+
 > NOTE: I had to take out the words "alive" and "dead" from the word list or **hydra** would detect those as valid _filter_ values
+
+> NOTE: Brute-force word lists were generated using **crunch**, for example, `crunch 4 4 -o words4.lst` would generate words of exactly 4 lowercase characters into the output file `words4.lst`, which I then used with the **hydra** command.
+
+> NOTE: Dictionary words were obtained from the Oxford Scramble Player's Dictionary (**ospd.txt**) taken from https://github.com/dolph/dictionary/blob/master/ospd.txt .
+
 
 
 <br><br>
