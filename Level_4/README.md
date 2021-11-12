@@ -207,6 +207,7 @@ I had tried the following:
 
 - brute-forcing strings of 1 to 4 characters, pre-pended with the prefix characters "is"
 - common English words of 1 to 5 characters, pre-pended with the prefix characters "is"
+- common English words of 6 to 7 characters, without the "is" prefix
 
 The brute-force guessing of valid _filter_ values was performed using multiple runs of **THC Hydra** to try different values for the _filter_ parameter. A valid session cookie must be included in the final **hydra** command, like so:
 
