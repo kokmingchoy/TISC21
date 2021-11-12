@@ -194,28 +194,28 @@ curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfa
 - The filter value was case-insensitive. A _filter_ value of "isDEAD" returned the same output as a value of "isdead".
 - When the _filter_ value was valid, some interesting output was in a HTML table
 - When the _filter_ value was invalid, the words "0 results" appeared in the output.
-- Many special characters (including the space character) were stripped from the input _filter_ values. This has implications for an attempt to perform SQL injection as I could not use the characters `--` or `+` in place of a space, even if they were URL-encoded.
-  
+- Many special characters (including the space character) were stripped from the input _filter_ values. This reduced my options for SQL injection as I could not use the characters `%`, `'`, `--` or `+`. This was confirmed when I tried **sqlmap** and it also claimed the parameter _filter_ did not seem "injectable"; the command line I used was: `sqlmap --cookie="PHPSESSID=<session_cookie>" -p filter --forms -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/landing_admin.php`.
+
+<br>
+
+---
+
 At this time I had to consider that the alternative was guessing a valid _filter_ value that should give me the desired output (i.e. the row of data with the encryption key in the KEY column of the output table).
 
-Making some assumptions:
+It was not feasible to brute-force passwords of length 5 characters or more as that would mean trying millions of combinations. 
+I had tried the following:
 
-- the value for _filter_ always starts with the prefix "is" (as in "isALIVE", "isDEAD")
-- the characters after the "is" prefix were only the letters A through Z (no digits)
-- the characters after the "is" prefix make up a valid English word
+- brute-forcing strings of 1 to 4 characters, pre-pended with the prefix characters "is"
+- common English words of 1 to 5 characters, pre-pended with the prefix characters "is"
 
-Based on the above assumptions, I took a dictionary word list and extracted all words that were 1 to 5 characters long and ended up with a list that is around 13,600 words long. 
-
-Using the word list in `words.lst` I used **THC Hydra** to try different values for the _filter_ parameter in the hope of guessing a valid value.
-A valid session cookie must be included in the final **hydra** command, like so:
+The brute-force guessing of valid _filter_ values was performed using **THC Hydra** to try different values for the _filter_ parameter. A valid session cookie must be included in the final **hydra** command, like so:
 
 ```bash
 hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_admin.php:filter=is^PASS^:0 results:H=Cookie\: PHPSESSID=__session_cookie__"
 ```
 
-<br>
-
-> NOTE: I had to supply an arbitrary username of "admin" because **hydra** requires a username, but this value of "admin" is not used.
+> NOTE: The ip address 178.128.218.40 corresponded to that for the domain `s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg`
+> NOTE: I had to supply an arbitrary username of "admin" because **hydra** required a username, but this value of "admin" is not used.
 > NOTE: I had to take out the words "alive" and "dead" from the word list or **hydra** would detect those as valid _filter_ values
 
 
