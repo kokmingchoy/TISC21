@@ -214,6 +214,8 @@ The brute-force guessing of valid _filter_ values was performed using **THC Hydr
 hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_admin.php:filter=is^PASS^:0 results:H=Cookie\: PHPSESSID=__session_cookie__"
 ```
 
+<br>
+
 > NOTE: The ip address 178.128.218.40 corresponded to that for the domain `s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg`
 
 > NOTE: I had to supply an arbitrary username of "admin" because **hydra** required a username, but this value of "admin" is not used.
