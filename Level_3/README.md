@@ -113,10 +113,9 @@ It appears that code in `a.exe` was extracting specific content from `2.txt` bas
 
 <br><br>
 
+There was a section of code that I could not follow in the decompiler while stepping through the program in a debugger, so I was unable to figure out how exactly it managed to find and display the text "Almost there!" from the contents extracted from `2.bmp` (see next section).
 
-
-
-
+<br>
 
 ---
 
@@ -157,3 +156,9 @@ with open("final_words", "wb") as output:
 ```
 
 ---
+
+When used in conjunction with the executable that was extracted from `1.bmp` (see preceding section), the contents led to some interesting output from the hidden executable, which suggested I was close to the flag. 
+
+Unfortunately, I did not understand the workings of the executable enough to know how to manipulate the executable such that it would output the final flag.
+
+😞 Challenge 3 was not solved.
