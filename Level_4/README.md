@@ -229,15 +229,13 @@ hydra -l admin -P words.lst -s 18926 178.128.218.40 http-post-form "/landing_adm
 
 > NOTE: Dictionary words were obtained from the Oxford Scramble Player's Dictionary (**ospd.txt**) taken from https://github.com/dolph/dictionary/blob/master/ospd.txt .
 
+---
 
+I might be overlooking something rather obvious here (a value for _filter_ that would dump the other rows of data from the same table while staying within the constraints that I had encountered, i.e. the limit of 7 characters for the _filter_ value and also that certain characters like `%` were being filtered).
+
+While I had tried guessing the "correct" value for _filter_ through brute force means using **hydra** over many hours of effort, I don't think this was the expected solution as I deduced that other participants of TISC had solved this Challenge in a period of time that did not suggest brute-forcing the value of _filter_.
 
 <br><br>
-<br><br>
-<br><br>
-
-
-
-
 
 ---
 
