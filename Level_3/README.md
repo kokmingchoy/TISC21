@@ -111,9 +111,7 @@ But most interestingly, if I were to take the hidden content extracted from `2.b
 
 It appears that code in `a.exe` was extracting specific content from `2.txt` based on some algorithm.
 
-<br><br>
-
-There was a section of code that I could not follow in the decompiler while stepping through the program in a debugger, so I was unable to figure out how exactly it managed to find and display the text "Almost there!" from the contents extracted from `2.bmp` (see next section).
+There was a section of code that I could not follow in the decompiler while stepping through the program in a debugger, so I was unable to figure out how exactly it managed to find and display the text "Almost there!!" from the contents extracted from `2.bmp` (see next section).
 
 <br>
 
