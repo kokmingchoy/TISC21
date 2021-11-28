@@ -171,3 +171,7 @@ At the conclusion of TISC 2021 I reviewed the writeups of those who had managed 
 As I had already figured out, to arrive at the solution to this challenge one needed to be able to perform reverse engineering.
 As this was my first time doing reverse engineering my expertise in this area was lacking.
 
+## Solution
+
+The part of the code in the extracted `a.exe` that I was not able to follow apparently loaded a DLL, which in would open the file `key.txt` which is supposed to contain a decryption key. When the keyword `!t4ttaRRatt4t!` (found within `2.txt`) was in `key.txt`, running `a.exe 2.txt` would reveal the flag.
+
