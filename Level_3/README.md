@@ -160,3 +160,14 @@ When used in conjunction with the executable that was extracted from `1.bmp` (se
 Unfortunately, I did not understand the workings of the executable enough to know how to manipulate the executable such that it would output the final flag.
 
 😞 Challenge 3 was not solved.
+
+---
+
+<br>
+
+## Postscript
+
+At the conclusion of TISC 2021 I reviewed the writeups of those who had managed to complete **Challenge 3**. 
+As I had already figured out, to arrive at the solution to this challenge one needed to be able to perform reverse engineering.
+As this was my first time doing reverse engineering my expertise in this area was lacking.
+
