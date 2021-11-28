@@ -278,6 +278,8 @@ I even wrote a Python script to generate a 1024-word list with the word "palindr
 
 ---
 
+<br>
+
 ## Postscript
 
 At the conclusion of TISC 2021, I reviewed the writeups from those who had completed **Challenge 4** and indeed I had been very close to getting the flag.
