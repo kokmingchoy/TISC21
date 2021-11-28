@@ -275,3 +275,25 @@ I even wrote a Python script to generate a 1024-word list with the word "palindr
 ---
 
 😞 **Level 4 Challenge was not solved**
+
+---
+
+Postscript:
+
+At the conclusion of TISC 2021, I reviewed the writeups from those who had completed **Challenge 4** and indeed I had been very close to getting the flag.
+
+Although I had managed to determine that the acceptable characters for the _filter_ value included the characters [a-z], [0-9], and the symbols `\`, `'`, `(`, `)`, and `#`, I was only familiar with the "classic" `or 1=1` variations of SQL injection strings and unfortunately I also did not manage to come across the following variations of SQL injection strings while searching online.
+
+The following were workable SQL injection strings which were within the 7-character limit and which worked around the fact that commonly-used characters like _space_ and the `%` sign were being filtered:
+
+```
+'or(1)#
+```
+```
+'or'1'#
+```
+```
+'\xa0or\xa01#
+```
+
+Note: The 3rd and last example SQL injection string was using the hex character `a0` (non-breaking space) to work around the need for a space character, which was filtered from the input.
