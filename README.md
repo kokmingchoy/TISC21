@@ -1,4 +1,4 @@
-# TISC21
+# TISC 2021
 
 This is my write-up for The InfoSecurity Challenge (TISC) 2021 by the Center for Strategic Technologies (CSIT).<br>
 I came in in the top 50 out of about 500 registered players, managing to complete all of the challenges on Levels 1 and 2, and progressing through about 30% and 95% of the solution to the challenges on Levels 3 and 4 respectively.
