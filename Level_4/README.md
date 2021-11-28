@@ -298,4 +298,4 @@ The following were workable SQL injection strings which were within the 7-charac
 '\xa0or\xa01#
 ```
 
-Note: The 3rd and last example SQL injection string was using the hex character `a0` (non-breaking space) to work around the need for a space character, which was filtered from the input.
+Note: The 3rd and last example SQL injection string was using the `\xa0` (the hex character "a0" for a non-breaking space) to work around the need for a space character, which was filtered from the input.
