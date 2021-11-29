@@ -299,3 +299,6 @@ The following were workable SQL injection strings which were within the 7-charac
 ```
 
 Note: The 3rd and last example SQL injection string was using the `\xa0` (the hex character "a0" for a non-breaking space) to work around the need for a space character, which was filtered from the input.
+
+This was indeed a _facepalm_ moment for me. 🤦‍♂️ <br>
+Well, live and learn!
