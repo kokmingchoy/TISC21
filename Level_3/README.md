@@ -173,5 +173,5 @@ As this was my first time doing reverse engineering my expertise in this area wa
 
 ## Solution
 
-The part of the code in the extracted `a.exe` that I was not able to follow apparently loaded a DLL, which in would open the file `key.txt` which is supposed to contain a decryption key. When the keyword `!t4ttaRRatt4t!` (found within `2.txt`) was in `key.txt`, running `a.exe 2.txt` would reveal the flag.
+The part of the code in the extracted `a.exe` that I was not able to follow apparently loaded a DLL, which in turn would open the file `key.txt` which is supposed to contain a decryption key. When the keyword `!t4ttaRRatt4t!` (found within `2.txt`) was in `key.txt`, running `a.exe 2.txt` would reveal the flag.
 
