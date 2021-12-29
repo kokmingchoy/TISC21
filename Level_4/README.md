@@ -194,7 +194,7 @@ curl -d "filter=isalive" -b "PHPSESSID=xxx_session_cookie_xxxx" http://s0pq6slfa
 - The filter value was case-insensitive. A _filter_ value of "isDEAD" returned the same output as a value of "isdead".
 - When the _filter_ value was valid, some interesting output was in a HTML table
 - When the _filter_ value was invalid, the words "0 results" appeared in the output.
-- Many special characters (including the space character) were stripped from the input _filter_ values. This reduced my options for SQL injection as I could not use the characters `%`, `'`, `--` or `+`. This was confirmed when I tried **sqlmap** and it also claimed the parameter _filter_ did not seem "injectable"; the command line I used was: `sqlmap --cookie="PHPSESSID=<session_cookie>" -p filter --forms -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/landing_admin.php`.
+- Many special characters (including the space character) were stripped from the input _filter_ values. This reduced my options for SQL injection as I could not use the characters `%`, `--` or `+`. This was confirmed when I tried **sqlmap** and it also claimed the parameter _filter_ did not seem "injectable"; the command line I used was: `sqlmap --cookie="PHPSESSID=<session_cookie>" -p filter --forms -u http://s0pq6slfaunwbtmysg62yzmoddaw7ppj.ctf.sg:18926/landing_admin.php`.
 
 <br>
 
